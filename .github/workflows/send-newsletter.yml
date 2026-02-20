@@ -36,7 +36,7 @@ jobs:
           fi
 
       - name: Send newsletter
-        if: steps.date.outputs.date \!= ''
+        if: steps.date.outputs.date != ''
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           WORKER_URL: ${{ secrets.WORKER_URL }}
@@ -44,4 +44,3 @@ jobs:
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           EPISODE_DATE: ${{ steps.date.outputs.date }}
         run: node .github/scripts/send-newsletter.js
-
