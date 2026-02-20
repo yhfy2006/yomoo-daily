@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1a1410">
+  <title>Subscribe — YOMOO 每日AI快送</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--y-amber:#E8722A;--bg:#1a1410;--bg-card:#231e18;--text-primary:#f5efe6;--text-body:#d4cbbf;--text-muted:#5c5347;--border:rgba(245,239,230,0.06);--serif:'Playfair Display',Georgia,serif;--sans:'Noto Sans SC',-apple-system,sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text-body);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.25rem}
+    .card{max-width:400px;width:100%;text-align:center}
+    .logo{display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem}
+    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#E8722A,#D4A053);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:900;font-size:20px;color:white}
+    .logo-name{font-family:var(--serif);font-size:1.3rem;font-weight:800;color:var(--text-primary)}
+    h1{font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--text-primary);margin-bottom:0.5rem}
+    .subtitle{font-size:0.9rem;color:var(--text-muted);margin-bottom:2rem}
+    .form-group{display:flex;gap:0.5rem;margin-bottom:1rem}
+    input[type="email"]{flex:1;padding:0.75rem 1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-size:0.9rem;outline:none}
+    input[type="email"]:focus{border-color:rgba(232,114,42,0.4)}
+    button{padding:0.75rem 1.5rem;background:linear-gradient(135deg,#E8722A,#D4A053);color:white;border:none;border-radius:10px;font-weight:600;font-size:0.9rem;cursor:pointer;transition:opacity 0.2s}
+    button:hover{opacity:0.9}
+    button:disabled{opacity:0.5;cursor:not-allowed}
+    .message{font-size:0.85rem;margin-top:0.5rem;min-height:1.5em}
+    .message.success{color:#22c55e}
+    .message.error{color:#ef4444}
+    .footer{margin-top:3rem;font-size:0.7rem;color:var(--text-muted)}
+    .footer a{color:var(--text-muted);text-decoration:none}
+    .footer a:hover{color:var(--y-amber)}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">Y</div>
+      <span class="logo-name">YOMOO</span>
+    </div>
+    <h1>每日AI快送</h1>
+    <p class="subtitle">Subscribe to receive the daily AI briefing in your inbox</p>
+    <div class="form-group">
+      <input type="email" id="email" placeholder="your@email.com" required>
+      <button id="btn" onclick="subscribe()">Subscribe</button>
+    </div>
+    <p class="message" id="msg"></p>
+    <div class="footer">
+      <a href="../index.html">Browse episodes</a> &middot; Powered by YOMOO LLC
+    </div>
+  </div>
+  <script>
+    async function subscribe(){
+      var email=document.getElementById('email').value.trim();
+      var msg=document.getElementById('msg');
+      var btn=document.getElementById('btn');
+      if(!email||!email.includes('@')){msg.className='message error';msg.textContent='Please enter a valid email';return}
+      btn.disabled=true;btn.textContent='...';msg.textContent='';
+      try{
+        var resp=await fetch('https://yomoo-subscribe-worker.yomoo-llc.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})});
+        var data=await resp.json();
+        if(data.success){msg.className='message success';msg.textContent='Subscribed! Check your inbox tomorrow.';document.getElementById('email').value=''}
+        else{msg.className='message error';msg.textContent=data.error||'Something went wrong'}
+      }catch(e){msg.className='message error';msg.textContent='Network error, please try again'}
+      btn.disabled=false;btn.textContent='Subscribe';
+    }
+    document.getElementById('email').addEventListener('keydown',function(e){if(e.key==='Enter')subscribe()});
+  </script>
+</body>
+</html>
