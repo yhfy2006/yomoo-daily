@@ -2,45 +2,247 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fffbf5" media="(prefers-color-scheme: light)">
   <title>YOMOO 每日AI快送</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --y-amber: #E8722A;
+      --y-amber-soft: #F4945E;
+      --y-amber-deep: #C4561A;
+      --y-amber-glow: rgba(232,114,42,0.12);
+      --y-amber-border: rgba(232,114,42,0.25);
+      --y-gold: #D4A053;
+      --bg: #fffbf5;
+      --bg-card: #ffffff;
+      --bg-elevated: #fff8ef;
+      --text-primary: #1a1410;
+      --text-body: #3d3529;
+      --text-secondary: #8a7e6e;
+      --text-muted: #b5a898;
+      --border: rgba(26,20,16,0.08);
+      --border-strong: rgba(26,20,16,0.14);
+      --shadow-sm: 0 1px 3px rgba(26,20,16,0.04);
+      --shadow-md: 0 4px 16px rgba(26,20,16,0.06);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+      --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --y-amber: #F4945E;
+        --y-amber-soft: #F9B88A;
+        --y-amber-deep: #E8722A;
+        --y-amber-glow: rgba(244,148,94,0.1);
+        --y-amber-border: rgba(244,148,94,0.2);
+        --y-gold: #E8BD7A;
+        --bg: #1a1410;
+        --bg-card: #231e18;
+        --bg-elevated: #2a241d;
+        --text-primary: #f5efe6;
+        --text-body: #d4cbbf;
+        --text-secondary: #8a7e6e;
+        --text-muted: #5c5347;
+        --border: rgba(245,239,230,0.06);
+        --border-strong: rgba(245,239,230,0.12);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+      }
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #1a1a2e; color: #eee; min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
-      width: 100%; padding: 2rem; text-align: center;
-      background: linear-gradient(135deg, #FF6B35, #ff8f5e);
+    .site-header {
+      position: relative;
+      padding: calc(env(safe-area-inset-top, 0px) + 2.5rem) 1.25rem 1.5rem;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
     }
-    header h1 { font-size: 1.8rem; color: #fff; }
-    header p { color: rgba(255,255,255,0.85); margin-top: 0.3rem; font-size: 0.9rem; }
-    main { max-width: 640px; width: 100%; padding: 2rem 1rem; }
-    h2 { font-size: 1rem; margin-bottom: 1rem; color: #FF6B35; }
-    ul { list-style: none; }
-    li { margin-bottom: 0.5rem; }
-    li a {
-      display: block; padding: 0.75rem 1rem; border-radius: 8px;
-      background: rgba(255,255,255,0.05); color: #eee; text-decoration: none;
-      transition: background 0.2s;
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--y-amber-deep), var(--y-amber), var(--y-gold));
     }
-    li a:hover { background: rgba(255,107,53,0.15); }
-    footer { margin-top: auto; padding: 2rem; text-align: center; font-size: 0.75rem; color: #888; }
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .header-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--y-amber), var(--y-gold));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 900; font-size: 15px; color: white;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 8px rgba(232,114,42,0.3);
+    }
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--text-primary);
+    }
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .header-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+    .subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      background: linear-gradient(135deg, var(--y-amber-deep), var(--y-amber));
+      color: white;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 24px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 2px 10px rgba(232,114,42,0.3);
+    }
+    .subscribe-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .subscribe-btn svg { flex-shrink: 0; }
+    .content-area {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .episode-list {
+      list-style: none;
+    }
+    .episode-list li {
+      margin-bottom: 0.5rem;
+    }
+    .episode-list a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .episode-list a:hover {
+      border-color: var(--y-amber-border);
+      background: var(--bg-elevated);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .episode-list a::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--y-amber);
+      flex-shrink: 0;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+      border-top: 1px solid var(--border);
+    }
+    .footer-brand {
+      font-size: 0.7rem; font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+    .footer-powered {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+    @media (min-width: 768px) {
+      .site-header { padding-top: 3rem; padding-bottom: 2rem; }
+      .content-area { padding: 2rem 2rem 4rem; }
+    }
+    @media (max-width: 374px) { html { font-size: 14px; } }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>YOMOO 每日AI快送</h1>
-    <p>AI-powered daily tech briefing</p>
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">Y</div>
+      <span class="header-name">YOMOO</span>
+    </div>
+    <h1 class="header-title">每日AI快送</h1>
+    <p class="header-subtitle">AI-powered daily tech briefing &amp; podcast</p>
+    <a href="subscribe/index.html" class="subscribe-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Subscribe
+    </a>
   </header>
-  <main>
-    <h2>Episodes</h2>
-    <ul id="episode-list">
+  <main class="content-area">
+    <div class="section-label">Episodes</div>
+    <ul id="episode-list" class="episode-list">
         <li><a href="episodes/2026-02-20/index.html">YOMOO 每日AI快送 - 2026-02-20</a></li>
     </ul>
   </main>
-  <footer>YOMOO 每日AI快送 &copy; 2026</footer>
+  <footer class="site-footer">
+    <div class="footer-brand">YOMOO 每日AI快送 &copy; 2026</div>
+    <div class="footer-powered">Powered by YOMOO LLC</div>
+  </footer>
 </body>
 </html>
