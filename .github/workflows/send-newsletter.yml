@@ -1,0 +1,45 @@
+name: Send Newsletter
+
+on:
+  push:
+    paths:
+      - 'episodes/*/email.html'
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Episode date (YYYY-MM-DD)'
+        required: true
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine episode date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          else
+            DATE=$(git diff --name-only HEAD~1 HEAD | grep 'episodes/.*/email.html' | head -1 | sed 's|episodes/\(.*\)/email.html|\1|')
+            echo "date=$DATE" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send newsletter
+        if: steps.date.outputs.date \!= ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          WORKER_SECRET: ${{ secrets.WORKER_SECRET }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          EPISODE_DATE: ${{ steps.date.outputs.date }}
+        run: node .github/scripts/send-newsletter.js
+
