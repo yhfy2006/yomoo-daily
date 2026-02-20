@@ -233,7 +233,10 @@
 
     /* ===== AUDIO PLAYER ===== */
     .audio-player {
-      margin: 1.25rem 0;
+      max-width: 720px;
+      width: 100%;
+      margin: 1.25rem auto;
+      box-sizing: border-box;
       padding: 1rem 1.25rem;
       background: var(--bg-elevated);
       border: 1px solid var(--y-amber-border);
@@ -518,9 +521,7 @@
     </div>
   </nav>
 
-  <main class="content-area">
-    <div id="panel-report" class="tab-panel active">
-      <div class="audio-player">
+  <div class="audio-player">
         <div class="audio-player-label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           <span>收听音频版</span>
@@ -533,6 +534,9 @@
           下载 MP3
         </a>
       </div>
+
+  <main class="content-area">
+    <div id="panel-report" class="tab-panel active">
       <div class="report-content">
         <h1>每日科技简报 — 2026年2月20日</h1>
 <hr>
@@ -631,20 +635,7 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
           PODCAST SCRIPT
         </div>
-        <div class="audio-player">
-        <div class="audio-player-label">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span>收听音频版</span>
-        </div>
-        <audio controls preload="metadata">
-          <source src="https://github.com/yhfy2006/yomoo-daily/releases/download/v2026-02-20-mlvg29nj/yomoo-2026-02-20.mp3" type="audio/mpeg">
-        </audio>
-        <a href="https://github.com/yhfy2006/yomoo-daily/releases/download/v2026-02-20-mlvg29nj/yomoo-2026-02-20.mp3" class="audio-download" download>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          下载 MP3
-        </a>
-      </div>
-        <p>大家好，欢迎来到2026年2月20日的 YOMOO 每日AI快送。</p>
+          <p>大家好，欢迎来到2026年2月20日的 YOMOO 每日AI快送。</p>
 <p>今天我跟你说一个特别魔幻的事儿。有一家公司，一年赚了45亿美元，听起来挺厉害吧？但它同时亏了52亿。赚的每一块钱，都要倒贴一块多出去。更离谱的是，这家公司还承诺未来四年要在训练上砸1000亿美元。你猜是谁？不是什么初创小作坊，是号称&quot;最安全的AI公司&quot;Anthropic。</p>
 <p>科技博主Ed Zitron刚刚发了一篇万字长文，把Anthropic从里到外扒了个精光。我跟你说几个最扎心的数字。Anthropic光是推理成本就占了营收的59%，差不多28亿美元花在算力上。你可能觉得，至少比OpenAI强吧？不好意思，OpenAI这个比例是62%，几乎一模一样。所谓的&quot;效率优势&quot;根本不存在。</p>
 <p>更有意思的是Zitron怎么拆解Anthropic创始人Dario Amodei的&quot;融资话术&quot;。每次要融新一轮钱之前，Amodei就精准释放信号，说什么AGI&quot;也许&quot;、&quot;可能&quot;、&quot;最早在&quot;某个时间点到来。注意这些限定词。但媒体报道的时候呢？全给你删掉了，直接变成&quot;Anthropic CEO预言AGI即将到来&quot;。你看，这招高不高？</p>
