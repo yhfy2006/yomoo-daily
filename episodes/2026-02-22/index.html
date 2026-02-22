@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fffbf5" media="(prefers-color-scheme: light)">
+  <title>YOMOO 每日AI快送 — 2026-02-22</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --y-amber: #E8722A;
+      --y-amber-soft: #F4945E;
+      --y-amber-deep: #C4561A;
+      --y-amber-glow: rgba(232,114,42,0.12);
+      --y-amber-border: rgba(232,114,42,0.25);
+      --y-gold: #D4A053;
+      --bg: #fffbf5;
+      --bg-card: #ffffff;
+      --bg-elevated: #fff8ef;
+      --bg-subtle: #f5efe6;
+      --text-primary: #1a1410;
+      --text-body: #3d3529;
+      --text-secondary: #8a7e6e;
+      --text-muted: #b5a898;
+      --border: rgba(26,20,16,0.08);
+      --border-strong: rgba(26,20,16,0.14);
+      --shadow-sm: 0 1px 3px rgba(26,20,16,0.04);
+      --shadow-md: 0 4px 16px rgba(26,20,16,0.06);
+      --shadow-lg: 0 8px 32px rgba(26,20,16,0.08);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+      --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --y-amber: #F4945E;
+        --y-amber-soft: #F9B88A;
+        --y-amber-deep: #E8722A;
+        --y-amber-glow: rgba(244,148,94,0.1);
+        --y-amber-border: rgba(244,148,94,0.2);
+        --y-gold: #E8BD7A;
+        --bg: #1a1410;
+        --bg-card: #231e18;
+        --bg-elevated: #2a241d;
+        --bg-subtle: #1f1a14;
+        --text-primary: #f5efe6;
+        --text-body: #d4cbbf;
+        --text-secondary: #8a7e6e;
+        --text-muted: #5c5347;
+        --border: rgba(245,239,230,0.06);
+        --border-strong: rgba(245,239,230,0.12);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+        --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: relative;
+      padding: calc(env(safe-area-inset-top, 0px) + 2.5rem) 1.25rem 1.5rem;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--y-amber-deep), var(--y-amber), var(--y-gold));
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--y-amber), var(--y-gold));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 15px;
+      color: white;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 8px rgba(232,114,42,0.3);
+    }
+
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== TABS ===== */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .tabs-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.25rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.85rem 0;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn svg { opacity: 0.5; transition: opacity 0.3s ease; }
+    .tab-btn.active svg { opacity: 1; }
+
+    .tab-btn.active {
+      color: var(--y-amber);
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--y-amber);
+      border-radius: 1px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab-btn.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* ===== MAIN ===== */
+    .content-area {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== AUDIO PLAYER ===== */
+    .audio-player {
+      max-width: 720px;
+      width: 100%;
+      margin: 1.25rem auto;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--y-amber-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-sizing: border-box;
+    }
+
+    .audio-player-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.6rem;
+    }
+
+    .audio-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--y-amber);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .audio-download:hover {
+      background: var(--y-amber-glow);
+    }
+
+    /* ===== REPORT CONTENT ===== */
+    .report-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .report-content h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin: 2rem 0 1rem;
+    }
+
+    .report-content h1:first-child {
+      margin-top: 0;
+    }
+
+    .report-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .report-content p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .report-content ul, .report-content ol {
+      margin: 0.75rem 0 1.25rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    .report-content li {
+      margin-bottom: 0.4rem;
+      line-height: 1.75;
+    }
+
+    .report-content li::marker {
+      color: var(--y-amber);
+    }
+
+    .report-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .report-content a {
+      color: var(--y-amber);
+      text-decoration: none;
+      border-bottom: 1px solid var(--y-amber-border);
+      transition: border-color 0.2s ease;
+    }
+
+    .report-content a:hover {
+      border-color: var(--y-amber);
+    }
+
+    .report-content blockquote {
+      margin: 1.25rem 0;
+      padding: 0.85rem 1.15rem;
+      border-left: 3px solid var(--y-amber);
+      background: var(--y-amber-glow);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    .report-content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .report-content hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+      margin: 2rem 0;
+    }
+
+    .report-content code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      padding: 0.15em 0.45em;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      color: var(--y-amber-deep);
+    }
+
+    .report-content pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .report-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-body);
+    }
+
+    .report-content img {
+      max-width: 100%;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== PODCAST TAB ===== */
+    .podcast-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .podcast-content p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      text-indent: 2em;
+    }
+
+    .podcast-content p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 3.2em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.8;
+      margin: 0.08em 0.12em 0 0;
+      color: var(--y-amber);
+    }
+
+    .podcast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--y-amber-glow);
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+    }
+
+    .podcast-badge svg { flex-shrink: 0; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-powered {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 768px) {
+      .site-header { padding-top: 3rem; padding-bottom: 2rem; }
+      .content-area { padding: 0 2rem; }
+      .tabs-inner { padding: 0 2rem; }
+      .tab-btn { font-size: 0.88rem; padding: 1rem 0; }
+      .report-content { padding: 2rem 0 4rem; }
+      .podcast-content { padding: 2rem 0 4rem; }
+    }
+
+    @media (max-width: 374px) {
+      html { font-size: 14px; }
+    }
+
+    /* ===== SCROLL BAR ===== */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">Y</div>
+      <span class="header-name">YOMOO</span>
+    </div>
+    <h1 class="header-title">每日AI快送</h1>
+    <div class="header-date">2026-02-22</div>
+  </header>
+
+  
+  <nav class="tabs-container">
+    <div class="tabs-inner">
+      <button class="tab-btn active" data-tab="report" onclick="switchTab('report')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        每日简报
+      </button>
+      <button class="tab-btn" data-tab="podcast" onclick="switchTab('podcast')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        播客文案
+      </button>
+    </div>
+  </nav>
+
+  <div class="audio-player">
+        <div class="audio-player-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>收听音频版</span>
+        </div>
+        <audio controls preload="metadata">
+          <source src="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-02-22/yomoo-2026-02-22.mp3" type="audio/mpeg">
+        </audio>
+        <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-02-22/yomoo-2026-02-22.mp3" class="audio-download" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          下载 MP3
+        </a>
+      </div>
+
+  <main class="content-area">
+    <div id="panel-report" class="tab-panel active">
+      <div class="report-content">
+        <h1>每日科技简报 — 2026年2月22日</h1>
+<hr>
+<h2>执行摘要</h2>
+<p>本周科技圈的核心议题围绕AI对软件开发生态的深层重塑展开：从&quot;认知债务&quot;概念的兴起到开源社区遭受AI生成代码的冲击，再到AI漏洞挖掘能力引发的安全危机，行业正在经历一场关于效率、质量与伦理的三重拷问。与此同时，媒体理论家对&quot;后识字时代&quot;的分析为理解当下政治与社会传播格局提供了极具穿透力的框架。</p>
+<hr>
+<h2>主要专题</h2>
+<h3>一、AI编程的繁荣与阴影：从&quot;氛围编码&quot;到&quot;认知债务&quot;</h3>
+<p><strong>&quot;氛围编码&quot;正式走入主流视野</strong></p>
+<p>Paul Ford在《纽约时报》撰文描述了一种新型开发范式：在纽约地铁上，他通过手机向Claude Code发送提示词，到家时一个完整项目就已完成。他估算，用AI重建个人网站省下了约2.5万美元的外包费用，而一个数据转换项目在过去可能报价35万美元。Claude Code在上线六个月内为Anthropic创造了10亿美元收入。</p>
+<blockquote>
+<p><strong>为什么重要：</strong> 软件股因此集体暴跌，纳斯达克100指数两天内蒸发了5000亿美元。市场正在重新定价整个软件行业的人力价值。</p>
+</blockquote>
+<p>— 来源：<a href="https://www.nytimes.com/2026/02/18/opinion/ai-software.html?unlocked_article_code=1.NFA.djaw.TBlAp8kE_N-i">Daring Fireball / NYT</a></p>
+<p><strong>&quot;认知债务&quot;概念浮出水面</strong></p>
+<p>Margaret-Anne Storey提出了一个精准的新概念：当AI帮开发者快速生成代码时，真正的债务不在于代码质量，而在于<strong>开发者对自己系统的理解正在瓦解</strong>。她辅导的一个学生团队在第7-8周陷入瘫痪——不是因为技术债务，而是&quot;没有人能解释为什么做了某些设计决策&quot;。Simon Willison也坦承，在一些项目中他&quot;已经迷失在自己的项目里&quot;，无法对下一步做出有信心的判断。</p>
+<blockquote>
+<p><strong>为什么重要：</strong> 这可能是AI编程时代最关键的可持续性问题。生产力的提升如果以系统认知的丧失为代价，终将导致项目不可维护。</p>
+</blockquote>
+<p>— 来源：<a href="https://simonwillison.net/2026/Feb/15/cognitive-debt/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+<p><strong>开发者的&quot;Deep Blue&quot;心理危机</strong></p>
+<p>Simon Willison和Oxide播客团队为AI时代软件工程师的存在性焦虑命名为&quot;Deep Blue&quot;——借用1997年IBM击败卡斯帕罗夫的国际象棋计算机之名。Willison回忆，2023年当ChatGPT Code Interpreter在几个提示词内完成了他未来几年的数据工具路线图时，他第一次感受到这种冲击：&quot;我到底还有什么用？&quot;</p>
+<p>Steve Yegge则指出，AI已经把所有人变成了&quot;杰夫·贝索斯&quot;——简单工作被自动化了，留给人类的全是高难度决策。他发现每天4小时的Agent工作已是现实上限，并且需要更多睡眠来恢复认知负荷。</p>
+<p>— 来源：<a href="https://simonwillison.net/2026/Feb/15/deep-blue/#atom-everything">Simon Willison&#39;s Weblog</a> / <a href="https://simonwillison.net/2026/Feb/15/the-ai-vampire/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+<p><strong>务实派的自白：一位运维工程师的道德困境</strong></p>
+<p>博主Mathew Duggan以极其坦诚的笔触记录了他从AI怀疑论者到付费用户的转变。他本想写一篇批评文章，却发现Claude Code确实能完美生成Terraform、GitHub Actions和Kubernetes YAML——这些他花了无数小时手工编写的枯燥配置。他的EVE Online朋友一语中的：&quot;你以为自己是艺术家，其实我们都是靠打字赚钱的人。&quot;</p>
+<blockquote>
+<p><strong>关键引言：</strong> &quot;我付了每月20美元给一家未经许可就抓取了全人类知识的公司，只为了避免写Kubernetes YAML。我知道这让我成了什么人，只是还没找到一个我能接受的词来形容。&quot;</p>
+</blockquote>
+<p>— 来源：<a href="https://matduggan.com/i-sold-out-for-200-a-month-and-all-i-got-was-this-perfectly-generated-terraform/">matduggan.com</a></p>
+<hr>
+<h3>二、AI安全：被低估的废弃软件危机</h3>
+<p><strong>Anthropic发现500个零日漏洞只是冰山一角</strong></p>
+<p>Anthropic红队展示了Claude Opus 4.6在GhostScript、OpenSC等成熟开源项目中发现超过500个高危漏洞的能力。但安全研究员Martin Alderson指出，更可怕的问题在于<strong>大量已被放弃维护但仍在运行的软件</strong>。</p>
+<p>他对一个废弃PHP应用进行了测试：<strong>不到15分钟</strong>，Claude就发现了一个完整的远程代码执行（RCE）漏洞，包括绕过过滤机制的编码方法和完整的概念验证代码。通过Shodan扫描，他估计至少有数千台存在漏洞的服务器暴露在互联网上。他已联系维护者三周，无人回应。</p>
+<blockquote>
+<p><strong>为什么重要：</strong> AI彻底改变了漏洞挖掘的经济学。过去，攻击小众软件&quot;不值得&quot;，因为需要人类时间；现在，自动化Agent可以无限循环地克隆仓库、启动环境、寻找漏洞。<strong>&quot;没人会费心攻击这个&quot;的时代结束了。</strong></p>
+</blockquote>
+<p>— 来源：<a href="https://martinalderson.com/posts/anthropic-found-500-zero-days/?utm_source=rss">Martin Alderson</a></p>
+<p><strong>Starkiller钓鱼服务：MFA也救不了你</strong></p>
+<p>Krebs on Security报道了一种名为&quot;Starkiller&quot;的新型钓鱼即服务平台。它不再制作静态的登录页面副本，而是<strong>动态加载目标品牌的真实登录页面</strong>，通过Docker容器中的无头Chrome浏览器充当中间人代理，实时转发用户的凭据和MFA验证码。该服务甚至提供实时屏幕监控、按键记录、会话Cookie窃取和类似SaaS的运营分析仪表板。</p>
+<blockquote>
+<p><strong>关键洞察：</strong> 这标志着钓鱼攻击从&quot;仿冒&quot;升级为&quot;代理&quot;模式，传统的域名黑名单和静态页面检测方法将大幅失效。</p>
+</blockquote>
+<p>— 来源：<a href="https://krebsonsecurity.com/2026/02/starkiller-phishing-service-proxies-real-login-pages-mfa/">Krebs on Security</a></p>
+<hr>
+<h3>三、&quot;后识字时代&quot;的传播理论：理解当下的钥匙</h3>
+<p><strong>口述文化的回归如何重塑政治与认知</strong></p>
+<p>Derek Thompson在《大西洋月刊》与彭博的Joe Weisenthal进行了一场精彩对谈，围绕Walter Ong和Marshall McLuhan的媒介理论展开。核心论点是：<strong>社交媒体正在将人类推回&quot;口述文化&quot;时代</strong>——信息为了&quot;病毒式传播&quot;而优化、重复、押韵，就像荷马史诗时代一样。</p>
+<p>几个最具洞察力的观点：</p>
+<ul>
+<li><strong>特朗普是&quot;荷马式&quot;人物：</strong> 他的绰号策略（&quot;瞌睡乔&quot;&quot;低能杰布&quot;）与古希腊口述传统中的固定修饰语（&quot;酒色的海&quot;&quot;捷足的阿喀琉斯&quot;）如出一辙。Weisenthal认为，&quot;原始的吟游诗人很可能就是特朗普式的人物——喧闹、夸张、引人注目。&quot;</li>
+<li><strong>&quot;重型角色&quot;时代：</strong> Ong区分了&quot;重型&quot;和&quot;轻型&quot;角色——特朗普和马斯克是典型的重型角色，而奥巴马和肯尼迪是轻型角色。&quot;我们正处于重型角色的时代。&quot;</li>
+<li><strong>AI可能是识字时代的复仇：</strong> 与社交媒体的对抗性不同，与AI对话更像是&quot;与自己的潜意识对话&quot;——独处的、内省的、非竞争性的。Thompson认为这更接近阅读带来的内在体验。</li>
+<li><strong>Meyrowitz的1985年预言：</strong> &quot;我们日益复杂的技术世界让我们越来越依赖&#39;专家信息&#39;，但专家作为易犯错的普通人被普遍曝光后，我们对他们的信任减少了。&quot;——这段话写于41年前，读来却像2025年的社论。</li>
+</ul>
+<blockquote>
+<p><strong>为什么重要：</strong> 这一理论框架将社交媒体焦虑、政治极化、注意力下降、AI的角色等看似独立的现象统一在一个连贯的解释体系中。</p>
+</blockquote>
+<p>— 来源：<a href="https://www.theatlantic.com/ideas/2026/02/social-media-literacy-crisis/686076/?utm_source=feed">Derek Thompson / The Atlantic</a></p>
+<hr>
+<h3>四、软件基建的碎片化与统一之路</h3>
+<p><strong>Git代码托管平台的&quot;魔法文件夹&quot;大全</strong></p>
+<p>Andrew Nesbitt梳理了GitHub（<code>.github/</code>）、GitLab（<code>.gitlab/</code>）、Gitea（<code>.gitea/</code>）、Forgejo（<code>.forgejo/</code>）和Bitbucket（<code>.bitbucket/</code>）各自的仓库特殊目录。看似简单的功能——CI配置、代码审查模板、CODEOWNERS——在每个平台上的实现方式各不相同，跨平台兼容性远比预期差。</p>
+<p>文章特别列出了多个安全隐患：Forgejo和Gitea的<code>pull_request_target</code>触发器继承了GitHub Actions的&quot;pwn request&quot;攻击面；CVE-2025-68937是一个符号链接漏洞，允许通过模板仓库写入任意文件；GitHub Actions表达式<strong>不区分大小写</strong>，可能与Git本身的大小写敏感性产生安全缺口。</p>
+<p>— 来源：<a href="https://nesbitt.io/2026/02/22/forge-specific-repository-folders.html">Andrew Nesbitt</a></p>
+<p><strong>包管理器能从OCI容器标准中学到什么？</strong></p>
+<p>同样来自Andrew Nesbitt的一篇深度分析，梳理了17种不同包管理器的归档格式（从npm的<code>.tgz</code>到Alpine的&quot;三个gzip流拼接&quot;到RPM使用了30年的cpio），探讨了OCI（开放容器倡议）作为通用分发标准的可行性。Homebrew已经在2021年因Bintray关闭而被迫迁移到OCI存储。作者认为，OCI最适合作为包注册中心的<strong>后端存储基础设施</strong>，而非客户端直接交互的协议。</p>
+<p>— 来源：<a href="https://nesbitt.io/2026/02/18/what-package-registries-could-borrow-from-oci.html">Andrew Nesbitt</a></p>
+<hr>
+<h3>五、AGI之争：定义的战争</h3>
+<p><strong>&quot;AGI已经实现&quot;的说法被严重夸大</strong></p>
+<p>Gary Marcus联合两位学者在《Nature》发表回应文章，直指近期AGI宣言的核心谬误：<strong>将基准测试上的高分数等同于通用智能</strong>。他们指出，基准测试评估的是&quot;受控条件下的特定能力&quot;，而AGI原始定义强调的是&quot;跨环境的鲁棒性、灵活性和自主目标导向行为&quot;。</p>
+<p>文章引入了一个新概念&quot;epistemia&quot;（认知幻觉）：在新闻来源可靠性评估实验中，LLM和人类在最终分类结果上经常一致，但<strong>底层判断过程完全不同</strong>——当证据稀少或矛盾时，人类会降低信心或暂缓判断，而LLM则继续给出高置信度的分类，&quot;用生成式合理性替代了认知评估&quot;。</p>
+<blockquote>
+<p><strong>关键引言：</strong> &quot;将日益精密的统计近似与通用智能混为一谈，不仅是概念错误，更是战略误判。&quot;</p>
+</blockquote>
+<p>— 来源：<a href="https://garymarcus.substack.com/p/rumors-of-agis-arrival-have-been">Gary Marcus / Substack</a></p>
+<hr>
+<h2>快讯</h2>
+<ul>
+<li><p><strong>英伟达投资OpenAI&quot;从未承诺&quot;：</strong> 黄仁勋否认曾承诺向OpenAI投资1000亿美元，称&quot;这是邀请，不是承诺，我们会一步步来&quot;。与此同时，OpenAI开始试验广告。Sam Altman曾表示广告是&quot;最后手段&quot;，看起来这个时刻已经到来。— <a href="https://idiallo.com/byte-size/nvidia-was-only-invited-to-invest?src=feed">iDiallo.com</a></p>
+</li>
+<li><p><strong>AI正在摧毁开源：</strong> Ars Technica因作者使用AI撰稿而产生虚假引用被迫撤回文章。讽刺的是，被虚假引用的维护者Scott Shambaugh正因AI代理自动提交低质量代码而遭到骚扰。构建该开源Agent工具OpenClaw的开发者刚被OpenAI聘用。— <a href="https://www.jeffgeerling.com/blog/2026/ai-is-destroying-open-source/">Jeff Geerling</a></p>
+</li>
+<li><p><strong>OpenClaw三个月传奇：</strong> 从2025年11月首次提交到10000个commit、600个贡献者、19.6万GitHub star，甚至出现在超级碗广告中。创始人Peter Steinberger宣布加入OpenAI，计划将项目移交独立基金会。— <a href="https://simonwillison.net/2026/Feb/15/openclaw/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+</li>
+<li><p><strong>Cory Doctorow博客六周年：</strong> 25年博客生涯中的又一个里程碑。他分享了使用Ollama本地LLM作为拼写检查工具的经验，同时为开源LLM正名——&quot;因为不喜欢Sam Altman就拒绝在笔记本上运行LLM，跟纳粹因为反犹就拒绝爱因斯坦的研究一样愚蠢。&quot;— <a href="https://pluralistic.net/2026/02/19/now-we-are-six/">Pluralistic</a></p>
+</li>
+<li><p><strong>遥控操作不该是笑话：</strong> 从Amazon&quot;Just Walk Out&quot;商店到Tesla Optimus机器人再到1X家用机器人，&quot;遥控操作&quot;一旦曝光就变成丑闻。但作者认为，通过低延迟通信实时控制双足机器人执行精细动作，本身就是非凡的工程成就。— <a href="https://idiallo.com/blog/teleoperation-is-the-butt-of-the-joke?src=feed">iDiallo.com</a></p>
+</li>
+<li><p><strong>第1000万个斐波那契数：</strong> 该数有2,089,877位数字，计算耗时150.3秒。通过证书验证（5f²±4为完全平方数），验证正确性只需3.3秒——不到计算时间的2%。— <a href="https://www.johndcook.com/blog/2026/02/21/f10000000/">John D. Cook</a></p>
+</li>
+<li><p><strong>阿里Qwen3.5发布：</strong> 混合架构（线性注意力+稀疏MoE），总参数3970亿但每次前向传播仅激活170亿。开源权重版本已可在Hugging Face获取。— <a href="https://simonwillison.net/2026/Feb/17/qwen35/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+</li>
+<li><p><strong>Interop 2026启动：</strong> Apple、Google、Microsoft和Mozilla继续合作推动浏览器互操作性。2026年最值得期待的特性是<strong>跨文档视图过渡</strong>——无需JavaScript即可实现SPA风格的页面切换动画。— <a href="https://simonwillison.net/2026/Feb/15/interop-2026/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+</li>
+</ul>
+<hr>
+<h2>值得关注</h2>
+<ul>
+<li><p><strong>废弃软件的安全清算：</strong> Martin Alderson的实验暗示，自动化漏洞挖掘Agent大规模扫描互联网上的废弃软件只是时间问题。ISP和托管商可能需要考虑主动隔离运行已废弃软件的服务器——这在规模上前所未有。</p>
+</li>
+<li><p><strong>&quot;解绑&quot;经济学的AI加速：</strong> Scott Werner的文章描述了AI如何让&quot;为50个客户构建完美工具的一人企业&quot;成为现实——就像集装箱使IKEA成为可能一样。当软件的基础成本趋近于零，&quot;不值得为这个市场开发&quot;的门槛也将崩塌。关注这一趋势对Zapier等&quot;万能连接器&quot;平台的冲击。— <a href="https://worksonmymachine.ai/p/the-great-zipper-of-capitalism">Works on My Machine</a></p>
+</li>
+<li><p><strong>Simon Willison的Showboat工具生态：</strong> 一套让AI编码Agent自动生成带截图的文档的工具链正在快速成型，包括远程实时发布、浏览器自动化（Rodney）和图表生成（Chartroom）。这可能代表了&quot;AI辅助开发&quot;工作流的一个重要演进方向——让Agent不仅写代码，还能<strong>展示和解释</strong>它写的代码。</p>
+</li>
+<li><p><strong>零工经济&quot;最低工资&quot;的定义之争：</strong> Cory Doctorow深入分析了西雅图PayUp计划的NBER研究结果。虽然司机时薪没有提高，但工作时间减少了——这意味着他们拿回了曾被平台无偿占用的等待时间。真正的最低工资改革需要为司机的<strong>全部在线时间</strong>付费，而不仅仅是载客时间。</p>
+</li>
+</ul>
+
+      </div>
+    </div>
+    
+    <div id="panel-podcast" class="tab-panel">
+      <div class="podcast-content">
+        <div class="podcast-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+          PODCAST SCRIPT
+        </div>
+        <p>大家好，欢迎来到2026年2月22日的 YOMOO 每日AI快送。</p>
+<p>今天我跟你说一个特别有意思的现象。一个人在纽约地铁上掏出手机，敲了几句话，等他到家的时候，一个完整的软件项目就已经写好了。这个人叫Paul Ford，他在纽约时报上写了这件事。他算了一下，用AI重建自己的个人网站，省了大概2.5万美元的外包费。另一个数据转换项目，以前报价35万美元，现在几句提示词就搞定了。听起来是不是特别美好？但你知道市场是什么反应吗？软件股集体暴跌，纳斯达克100指数两天之内蒸发了5000亿美元。5000亿啊，市场在用真金白银告诉你，整个软件行业的人力价值正在被重新定价。</p>
+<p>但是好景不长，或者说，表面的繁荣底下藏着一个巨大的坑。有一位叫Margaret-Anne Storey的研究者提出了一个特别精准的概念，叫&quot;认知债务&quot;。什么意思呢？就是AI帮你写了代码，速度飞快，质量看着也行，但问题是，你自己对这个系统越来越不理解了。她辅导的一个学生团队，前几周干得热火朝天，到了第七第八周突然瘫痪了。不是代码出了bug，而是团队里没有一个人能说清楚，当初为什么要这么设计。连Simon Willison这样的资深开发者都坦承，在某些项目里他已经迷失了，对下一步该怎么走完全没有信心。</p>
+<p>你想想看，这就像你请了一个特别厉害的装修队，三天给你把房子装好了，但是水管走的哪里、电线埋在哪里，你一概不知道。房子住着是挺好的，但哪天漏水了、短路了，你连从哪里下手都不知道。这就是认知债务，你用速度换来的东西，最终可能让整个项目变得不可维护。</p>
+<p>说到开发者的心态，Willison还提到了一个特别有意思的说法，他管这种焦虑叫&quot;Deep Blue时刻&quot;。1997年IBM的深蓝击败了国际象棋冠军卡斯帕罗夫，现在AI编程给开发者带来的冲击是类似的。Willison说他2023年第一次感受到这种震撼，是ChatGPT的代码解释器在几个提示词之内，就把他未来几年的数据工具路线图全部实现了。他当时的第一反应就是，&quot;我到底还有什么用？&quot;</p>
+<p>另一位叫Steve Yegge的开发者说得更直白，他说AI已经把所有人都变成了&quot;杰夫·贝索斯&quot;。什么意思呢？简单的工作全被自动化了，留给人类的全是高难度决策。他发现自己每天最多干四个小时的AI辅助开发就到极限了，而且需要更多的睡眠来恢复认知消耗。</p>
+<p>还有一位运维工程师Mathew Duggan，他的故事特别真实。他本来是想写一篇批评AI的文章，结果用了Claude Code之后发现，那些他花了无数小时手写的Terraform配置、Kubernetes YAML，AI确实能完美生成。他的一个游戏好友说了一句扎心的话：&quot;你以为自己是艺术家，其实我们都是靠打字赚钱的人。&quot;Duggan最后说，&quot;我每个月付20美元给一家未经许可就抓取了全人类知识的公司，只为了避免写Kubernetes YAML。我知道这让我成了什么人，只是还没找到一个我能接受的词来形容。&quot;你看，这种道德困境，其实是很多人心里的真实写照。</p>
+<p>好，咱们说回安全这个话题，这个更吓人。Anthropic的红队展示了他们的Claude模型在GhostScript、OpenSC这些成熟的开源项目里发现了超过500个高危零日漏洞。500个啊，这个数字已经很恐怖了，但安全研究员Martin Alderson说，这只是冰山一角。</p>
+<p>真正可怕的是什么？是那些被开发者放弃维护、但仍然在互联网上运行的软件。Alderson做了一个实验，他拿了一个废弃的PHP应用让Claude去测试，不到15分钟，AI就找到了一个完整的远程代码执行漏洞，包括绕过过滤的编码方法和完整的概念验证代码。他通过Shodan扫描发现，至少有数千台存在漏洞的服务器暴露在互联网上。他联系维护者三周了，没人回应。</p>
+<p>这意味着什么？过去，黑客攻击小众软件是&quot;不值得&quot;的，因为需要人类花时间去研究，成本太高。但现在有了AI，自动化的漏洞挖掘Agent可以无限循环地克隆代码仓库、启动环境、寻找漏洞。那个&quot;没人会费心攻击这个小破站&quot;的时代，彻底结束了。</p>
+<p>与此同时，钓鱼攻击也在进化。一个叫Starkiller的新型钓鱼服务平台被曝光了。它不再像以前那样做一个假的登录页面让你上当，而是直接用Docker容器里的无头浏览器加载目标网站的真实登录页面，充当中间人代理，实时转发你的密码和多因素验证码。甚至还提供实时屏幕监控、按键记录和数据分析仪表板，简直跟正规SaaS产品一样。这意味着你以前以为很安全的多因素认证，在这种攻击面前也不够用了。</p>
+<p>接下来聊一个特别烧脑但特别有启发的话题。Derek Thompson在大西洋月刊做了一期对谈，讨论的是&quot;后识字时代&quot;。听起来很学术，但其实跟我们每个人的日常生活息息相关。</p>
+<p>核心观点是什么呢？社交媒体正在把人类推回&quot;口述文化&quot;时代。什么是口述文化？就是在文字发明之前，人类靠口口相传来传递信息的时代。在那个时代，信息为了方便记忆和传播，必须押韵、重复、夸张，就像荷马史诗一样。而你看看现在的社交媒体，短视频、热梗、口号，是不是一模一样？</p>
+<p>他们举了一个特别精彩的例子。特朗普给对手起绰号的策略，&quot;瞌睡乔&quot;、&quot;低能杰布&quot;，其实跟古希腊口述传统里的固定修饰语是一回事。荷马史诗里管海叫&quot;酒色的海&quot;，管阿喀琉斯叫&quot;捷足的阿喀琉斯&quot;。Weisenthal说了一句很妙的话：&quot;原始的吟游诗人很可能就是特朗普式的人物，喧闹、夸张、引人注目。&quot;</p>
+<p>但这里面有一个特别有意思的反转。他们认为AI可能是&quot;识字时代的复仇&quot;。为什么？因为跟AI对话不像刷社交媒体那样充满对抗性和表演性，它更像是跟自己的潜意识对话，是独处的、内省的、非竞争性的。这其实更接近阅读带来的那种深层思考体验。</p>
+<p>还有一段话我觉得特别值得分享。1985年，一个叫Meyrowitz的学者写道：&quot;我们日益复杂的技术世界让我们越来越依赖专家信息，但专家作为易犯错的普通人被普遍曝光后，我们对他们的信任减少了。&quot;这段话写于41年前，但读起来像不像昨天的社论？</p>
+<p>快速过几条值得关注的消息。黄仁勋否认承诺向OpenAI投资1000亿美元，说&quot;那是邀请不是承诺&quot;。与此同时OpenAI开始试验广告了，Sam Altman以前说广告是&quot;最后手段&quot;，看来这个时刻已经到了。阿里发布了Qwen3.5模型，总参数3970亿但每次只激活170亿，开源权重已经可以下载。Gary Marcus在Nature上发文反驳&quot;AGI已实现&quot;的说法，指出在基准测试上拿高分不等于通用智能，还提出了一个新概念叫&quot;认知幻觉&quot;，就是AI在证据不足时仍然给出高置信度答案，而人类会选择暂缓判断。</p>
+<p>最后说一个让人哭笑不得的事。Ars Technica因为作者用AI写稿产生了虚假引用被迫撤回文章。更讽刺的是，被虚假引用的那个开源维护者Scott Shambaugh，正因为AI代理自动提交低质量代码而不堪其扰。而构建那个开源Agent工具的开发者，刚刚被OpenAI聘用了。你看，这就是2026年的科技圈，一个充满荒诞与矛盾的生态。</p>
+<p>所以你看，今天这些新闻串在一起，其实讲的是同一件事：AI正在以我们始料未及的速度重塑一切，从写代码的方式到安全的边界，从政治传播的逻辑到我们对智能本身的理解。速度带来了繁荣，但也在制造新的脆弱性。正如那个&quot;认知债务&quot;的概念告诉我们的，跑得快不等于跑得稳。在这个一切都在加速的时代，或许我们最需要的，反而是停下来想一想，我们真正理解我们正在构建的东西吗？</p>
+<p>如果您觉得我们的节目对您有帮助，请帮忙分享、转发给您的朋友，也欢迎直接回复邮件给我们提建议。好了，今天就到这里，我们明天见！</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      YOMOO 每日AI快送 &copy; 2026 &middot; <a href="../index.html">所有期刊</a>
+    </div>
+    <div class="footer-powered">Powered by YOMOO LLC</div>
+  </footer>
+
+  
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
