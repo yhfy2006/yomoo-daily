@@ -46,6 +46,43 @@ function hmacToken(email, secret) {
   return crypto.createHmac("sha256", secret).update(email).digest("hex");
 }
 
+function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+async function sendWithRetry(email, html, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    const resp = await fetchJson("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + RESEND_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: RESEND_FROM || "YOMOO 每日AI快送 <daily@yomoo.net>",
+        to: email,
+        subject: "YOMOO 每日AI快送 — " + EPISODE_DATE,
+        html: html,
+      }),
+    });
+
+    if (resp.status >= 200 && resp.status < 300) {
+      return { success: true };
+    }
+
+    if (resp.status === 429 && attempt < maxRetries) {
+      // Rate limited — back off and retry
+      const backoff = attempt * 2000;
+      console.log("    Rate limited, retrying in", backoff, "ms...");
+      await sleep(backoff);
+      continue;
+    }
+
+    return { success: false, status: resp.status, data: resp.data };
+  }
+  return { success: false, status: 429, data: "Max retries exceeded" };
+}
+
 async function main() {
   const workerUrl = WORKER_URL.replace(/\/$/, "");
   console.log("Fetching subscribers...");
@@ -77,35 +114,18 @@ async function main() {
     const unsubUrl = workerUrl + "/unsubscribe?email=" + encodeURIComponent(email) + "&token=" + token;
     const html = emailTemplate.replace(/{{UNSUBSCRIBE_URL}}/g, unsubUrl);
 
-    try {
-      const resp = await fetchJson("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Authorization": "Bearer " + RESEND_API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: RESEND_FROM || "YOMOO 每日AI快送 <daily@yomoo.net>",
-          to: email,
-          subject: "YOMOO 每日AI快送 — " + EPISODE_DATE,
-          html: html,
-        }),
-      });
+    const result = await sendWithRetry(email, html);
 
-      if (resp.status >= 200 && resp.status < 300) {
-        sent++;
-        console.log("  Sent to", masked);
-      } else {
-        failed++;
-        console.error("  Failed for", masked, ":", resp.status);
-      }
-    } catch (err) {
+    if (result.success) {
+      sent++;
+      console.log("  Sent to", masked);
+    } else {
       failed++;
-      console.error("  Error for", masked, ":", err.message);
+      console.error("  Failed for", masked, ":", result.status);
     }
 
-    // Rate limit: 100ms between sends
-    await new Promise(r => setTimeout(r, 100));
+    // Resend free tier: 2 emails/second — wait 600ms between sends
+    await sleep(600);
   }
 
   console.log("Done:", sent, "sent,", failed, "failed, out of", subscribers.length);
