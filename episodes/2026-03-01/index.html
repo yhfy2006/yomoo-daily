@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fffbf5" media="(prefers-color-scheme: light)">
+  <title>YOMOO 每日AI快送 — 2026-03-01</title>
+  <meta name="description" content="AI代码生成正深刻重塑开源协作模式——CPython接受AI提交代码、Cloudflare仅花1100美元复刻Next.js、维护者不堪低质PR侵扰；软件供应链工具链加速成熟，下游测试与包管理基础设施取得关键进展；Apple视频播客技术决策或将威胁播客生态的开放性。">
+  <link rel="canonical" href="https://daily.yomoo.net/episodes/2026-03-01/index.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="YOMOO 每日AI快送 — 2026-03-01">
+  <meta property="og:description" content="AI代码生成正深刻重塑开源协作模式——CPython接受AI提交代码、Cloudflare仅花1100美元复刻Next.js、维护者不堪低质PR侵扰；软件供应链工具链加速成熟，下游测试与包管理基础设施取得关键进展；Apple视频播客技术决策或将威胁播客生态的开放性。">
+  <meta property="og:url" content="https://daily.yomoo.net/episodes/2026-03-01/index.html">
+  <meta property="og:site_name" content="YOMOO 每日AI快送">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:published_time" content="2026-03-01T08:00:00+08:00">
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="科技新闻">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="YOMOO 每日AI快送 — 2026-03-01">
+  <meta name="twitter:description" content="AI代码生成正深刻重塑开源协作模式——CPython接受AI提交代码、Cloudflare仅花1100美元复刻Next.js、维护者不堪低质PR侵扰；软件供应链工具链加速成熟，下游测试与包管理基础设施取得关键进展；Apple视频播客技术决策或将威胁播客生态的开放性。">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "YOMOO 每日AI快送 — 2026-03-01",
+    "description": "AI代码生成正深刻重塑开源协作模式——CPython接受AI提交代码、Cloudflare仅花1100美元复刻Next.js、维护者不堪低质PR侵扰；软件供应链工具链加速成熟，下游测试与包管理基础设施取得关键进展；Apple视频播客技术决策或将威胁播客生态的开放性。",
+    "datePublished": "2026-03-01T08:00:00+08:00",
+    "dateModified": "2026-03-01T08:00:00+08:00",
+    "author": {
+      "@type": "Organization",
+      "name": "YOMOO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YOMOO",
+      "url": "https://daily.yomoo.net"
+    },
+    "mainEntityOfPage": "https://daily.yomoo.net/episodes/2026-03-01/index.html",
+    "audio": {
+      "@type": "AudioObject",
+      "contentUrl": "https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-01/yomoo-2026-03-01.mp3",
+      "encodingFormat": "audio/mpeg"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --y-amber: #E8722A;
+      --y-amber-soft: #F4945E;
+      --y-amber-deep: #C4561A;
+      --y-amber-glow: rgba(232,114,42,0.12);
+      --y-amber-border: rgba(232,114,42,0.25);
+      --y-gold: #D4A053;
+      --bg: #fffbf5;
+      --bg-card: #ffffff;
+      --bg-elevated: #fff8ef;
+      --bg-subtle: #f5efe6;
+      --text-primary: #1a1410;
+      --text-body: #3d3529;
+      --text-secondary: #8a7e6e;
+      --text-muted: #b5a898;
+      --border: rgba(26,20,16,0.08);
+      --border-strong: rgba(26,20,16,0.14);
+      --shadow-sm: 0 1px 3px rgba(26,20,16,0.04);
+      --shadow-md: 0 4px 16px rgba(26,20,16,0.06);
+      --shadow-lg: 0 8px 32px rgba(26,20,16,0.08);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+      --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --y-amber: #F4945E;
+        --y-amber-soft: #F9B88A;
+        --y-amber-deep: #E8722A;
+        --y-amber-glow: rgba(244,148,94,0.1);
+        --y-amber-border: rgba(244,148,94,0.2);
+        --y-gold: #E8BD7A;
+        --bg: #1a1410;
+        --bg-card: #231e18;
+        --bg-elevated: #2a241d;
+        --bg-subtle: #1f1a14;
+        --text-primary: #f5efe6;
+        --text-body: #d4cbbf;
+        --text-secondary: #8a7e6e;
+        --text-muted: #5c5347;
+        --border: rgba(245,239,230,0.06);
+        --border-strong: rgba(245,239,230,0.12);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+        --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: relative;
+      padding: calc(env(safe-area-inset-top, 0px) + 2.5rem) 1.25rem 1.5rem;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--y-amber-deep), var(--y-amber), var(--y-gold));
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--y-amber), var(--y-gold));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 15px;
+      color: white;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 8px rgba(232,114,42,0.3);
+    }
+
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== TABS ===== */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .tabs-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.25rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.85rem 0;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn svg { opacity: 0.5; transition: opacity 0.3s ease; }
+    .tab-btn.active svg { opacity: 1; }
+
+    .tab-btn.active {
+      color: var(--y-amber);
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--y-amber);
+      border-radius: 1px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab-btn.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* ===== MAIN ===== */
+    .content-area {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== AUDIO PLAYER ===== */
+    .audio-player {
+      max-width: 720px;
+      width: 100%;
+      margin: 1.25rem auto;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--y-amber-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-sizing: border-box;
+    }
+
+    .audio-player-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.6rem;
+    }
+
+    .audio-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--y-amber);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .audio-download:hover {
+      background: var(--y-amber-glow);
+    }
+
+    /* ===== REPORT CONTENT ===== */
+    .report-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .report-content h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin: 2rem 0 1rem;
+    }
+
+    .report-content h1:first-child {
+      margin-top: 0;
+    }
+
+    .report-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .report-content p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .report-content ul, .report-content ol {
+      margin: 0.75rem 0 1.25rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    .report-content li {
+      margin-bottom: 0.4rem;
+      line-height: 1.75;
+    }
+
+    .report-content li::marker {
+      color: var(--y-amber);
+    }
+
+    .report-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .report-content a {
+      color: var(--y-amber);
+      text-decoration: none;
+      border-bottom: 1px solid var(--y-amber-border);
+      transition: border-color 0.2s ease;
+    }
+
+    .report-content a:hover {
+      border-color: var(--y-amber);
+    }
+
+    .report-content blockquote {
+      margin: 1.25rem 0;
+      padding: 0.85rem 1.15rem;
+      border-left: 3px solid var(--y-amber);
+      background: var(--y-amber-glow);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    .report-content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .report-content hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+      margin: 2rem 0;
+    }
+
+    .report-content code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      padding: 0.15em 0.45em;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      color: var(--y-amber-deep);
+    }
+
+    .report-content pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .report-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-body);
+    }
+
+    .report-content img {
+      max-width: 100%;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== PODCAST TAB ===== */
+    .podcast-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .podcast-content p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      text-indent: 2em;
+    }
+
+    .podcast-content p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 3.2em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.8;
+      margin: 0.08em 0.12em 0 0;
+      color: var(--y-amber);
+    }
+
+    .podcast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--y-amber-glow);
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+    }
+
+    .podcast-badge svg { flex-shrink: 0; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-powered {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 768px) {
+      .site-header { padding-top: 3rem; padding-bottom: 2rem; }
+      .content-area { padding: 0 2rem; }
+      .tabs-inner { padding: 0 2rem; }
+      .tab-btn { font-size: 0.88rem; padding: 1rem 0; }
+      .report-content { padding: 2rem 0 4rem; }
+      .podcast-content { padding: 2rem 0 4rem; }
+    }
+
+    @media (max-width: 374px) {
+      html { font-size: 14px; }
+    }
+
+    /* ===== SCROLL BAR ===== */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8864a5e3-4f85-4cb6-9565-d7a9538027df"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">Y</div>
+      <span class="header-name">YOMOO</span>
+    </div>
+    <h1 class="header-title">每日AI快送</h1>
+    <div class="header-date">2026-03-01</div>
+  </header>
+
+  
+  <nav class="tabs-container">
+    <div class="tabs-inner">
+      <button class="tab-btn active" data-tab="report" onclick="switchTab('report')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        每日简报
+      </button>
+      <button class="tab-btn" data-tab="podcast" onclick="switchTab('podcast')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        播客文案
+      </button>
+    </div>
+  </nav>
+
+  <div class="audio-player">
+        <div class="audio-player-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>收听音频版</span>
+        </div>
+        <audio controls preload="metadata">
+          <source src="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-01/yomoo-2026-03-01.mp3" type="audio/mpeg">
+        </audio>
+        <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-01/yomoo-2026-03-01.mp3" class="audio-download" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          下载 MP3
+        </a>
+      </div>
+
+  <main class="content-area">
+    <div id="panel-report" class="tab-panel active">
+      <div class="report-content">
+        <h1>每日技术简报 — 2026年3月1日</h1>
+<hr>
+<h2>执行摘要</h2>
+<p>本期简报聚焦三大核心议题：<strong>AI代码生成正在深刻重塑开源生态</strong>——从CPython接受Claude提交的代码，到开源维护者不堪AI低质PR的侵扰，再到Cloudflare仅花1100美元就用AI复刻了Next.js，整个软件协作模式正面临根本性变革。与此同时，<strong>软件供应链工具链正在走向成熟</strong>，围绕下游测试、lockfile、包管理和ignore文件的基础设施建设取得重要进展。此外，<strong>Apple视频播客的技术决策可能威胁到播客生态最珍贵的开放性</strong>，值得所有关注互联网开放标准的人警惕。</p>
+<hr>
+<h2>主要报道</h2>
+<h3>一、AI代码生成冲击开源世界：协作模式面临根本性变革</h3>
+<h4>AI已进入核心开源项目的提交历史</h4>
+<p>CPython——全球最重要的开源项目之一——如今正在接收来自<code>claude</code>用户的代码贡献。社交媒体上流传的一个技巧是：在GitHub上屏蔽<code>claude</code>用户，这样每次访问有该用户提交的仓库时都会收到提醒。Miguel Grinberg指出，这一现象标志着AI编码助手正从辅助工具转变为直接参与者。</p>
+<p><strong>为什么重要：</strong> 当全球最受审视的开源项目之一开始接纳AI生成的代码，这既是对AI代码质量的背书，也引发了关于代码审查标准、归属权和项目治理的深层问题。</p>
+<blockquote>
+<p>来源：<a href="https://blog.miguelgrinberg.com/post/llm-use-in-the-python-source-code">Miguel Grinberg&#39;s Blog</a></p>
+</blockquote>
+<h4>&quot;开源的沉默&quot;：AI让贡献者和用户同时消失</h4>
+<p>Scott Werner在一篇引发广泛讨论的文章中，用一个社区种子图书馆的精妙比喻描述了正在发生的变化。核心观点可以归纳为三层冲击：</p>
+<ol>
+<li><strong>维护者被淹没。</strong> tldraw关闭了所有外部PR；cURL关闭了漏洞赏金计划（AI提交占20%，有效率仅5%）；Ghostty几乎全面禁止AI生成代码。</li>
+<li><strong>真正的贡献者不再敲门。</strong> 经济逻辑已经翻转——过去写代码昂贵、提交廉价，如今写代码廉价、让代码被合并反而昂贵。越来越多的人选择fork后自行修改，不再向上游提交。</li>
+<li><strong>SaaS厂商失去了他们永远不会知道的用户。</strong> Werner自己用Claude花20分钟构建了一个错误追踪系统，取代了他本会注册的SaaS服务。那个SaaS公司永远不会知道他的存在。</li>
+</ol>
+<p>最具冲击力的案例是：<strong>Cloudflare的一位工程经理仅用约1100美元的API费用，在几天内就复刻了Next.js的94% API功能</strong>——使用的正是Next.js自己精心编写的测试套件作为蓝图。正如Werner所写：&quot;就像花了多年写了世界上最详尽的日记，然后发现有人用它变成了你，只是稍微快一些。&quot;</p>
+<p><strong>为什么重要：</strong> 开源的核心循环——&quot;用户→贡献者→维护者&quot;——依赖于参与比不参与更容易这一前提。当AI让自给自足的成本低于沟通的成本时，这个循环就断裂了。Werner呼吁建立新的平台来支持&quot;fork-and-reabsorb&quot;模式，而非传统的PR审查模式。</p>
+<blockquote>
+<p>来源：<a href="https://worksonmymachine.ai/p/open-source-saas-and-the-silence">Works on My Machine</a></p>
+</blockquote>
+<h4>尊重性开源：不提交的贡献</h4>
+<p>Andrew Nesbitt写道，他在一个热门开源项目中发现并修复了一个bug，但看到维护者已经被issues和PR淹没，他选择不提交。这不是冷漠，而是一种&quot;尊重维护者注意力&quot;的有意识决定——即使是一个措辞为&quot;不着急&quot;的完美PR，也会在维护者心中制造一种低级别的义务感。</p>
+<p>他进一步指出，Git最初设计的<code>git request-pull</code>本质上是拉取模式（pull-based），由维护者决定何时查看。而GitHub将其改造为推送模式（push-based）的审查队列。在AI生成代码泛滥的时代，<strong>拉取模式反而可能是更好的选择</strong>——代理可以随意fork和生成垃圾代码，但什么都不会进入任何人的收件箱。</p>
+<p><strong>为什么重要：</strong> 开源可持续性讨论通常聚焦于资金，但维护者的注意力和心理健康同样是稀缺资源。AI加速了这一问题，而当前的工具和平台设计几乎没有为保护这一资源提供任何机制。</p>
+<blockquote>
+<p>来源：<a href="https://nesbitt.io/2026/02/13/respectful-open-source.html">Andrew Nesbitt</a></p>
+</blockquote>
+<hr>
+<h3>二、软件供应链基础设施走向成熟</h3>
+<h4>下游测试：在发布前发现你破坏了谁的代码</h4>
+<p>Andrew Nesbitt深入分析了一个被长期忽视的问题：库的维护者在发布新版本时，几乎没有办法知道这个版本会破坏哪些下游用户。Debian的autopkgtest在包迁移前运行反向依赖的测试套件；Fedora则更进一步，在PR阶段就触发下游测试。</p>
+<p>最引人注目的案例来自Rust：crater工具在一次测试中发现，为标准库添加<code>impl From&lt;f16&gt; for f32</code>——按照semver规则完全向后兼容的改动——竟然破坏了<strong>650,587个被测crate中的3,143个</strong>，因为现有代码依赖于&quot;这两个类型之间只有一条转换路径&quot;这一隐含假设。</p>
+<p>Nesbitt正在ecosyste.ms基础上构建这样一个服务：当维护者提交PR时，自动测试排名前N的下游依赖方，让维护者在打标签发布前就看到那些&quot;目前对他们不可见的东西&quot;。</p>
+<p><strong>为什么重要：</strong> Hyrum定律告诉我们，当用户足够多时，所有可观察的行为都会被依赖。下游测试是目前唯一能在发布前发现这些隐式契约被违反的方法。语言生态系统缺乏Linux发行版那样的结构化优势，但问题同样存在。</p>
+<blockquote>
+<p>来源：<a href="https://nesbitt.io/2026/02/19/go-modules-for-package-management-tooling.html">Andrew Nesbitt</a> | <a href="https://nesbitt.io/2026/03/01/downstream-testing.html">Andrew Nesbitt - Downstream Testing</a></p>
+</blockquote>
+<h4>Go生态系统工具链：14个模块覆盖整个包管理链路</h4>
+<p>Andrew Nesbitt发布了git-pkgs组织下的14个Go模块，覆盖从PURL标识、SPDX许可证规范化、跨平台字符串翻译（Go的<code>darwin/arm64</code> vs Rust的<code>aarch64-apple-darwin</code> vs RubyGems的<code>arm64-darwin</code>），到25个包注册中心的API客户端、7个漏洞数据源的统一接口、以及40+生态系统的manifest/lockfile解析。所有模块以PURL为通用标识符串联，完全开源(MIT)。</p>
+<blockquote>
+<p>来源：<a href="https://nesbitt.io/2026/02/19/go-modules-for-package-management-tooling.html">Andrew Nesbitt</a></p>
+</blockquote>
+<h4>Lockfile如何杀死了Vendoring</h4>
+<p>一篇深度历史回顾追溯了依赖管理从vendoring到lockfile的演变。在SVN时代，vendoring毫无痛感——SVN只拉取当前版本。但Git的&quot;克隆整个历史&quot;彻底改变了这一点。Bundler在2010年推出Gemfile.lock，npm直到2017年才有package-lock.json。left-pad事件看似为vendoring正名，实际上推动了注册中心治理的改善。Go是最后一个告别vendoring的主流语言，原因直接追溯到Google的monorepo文化。而Nix则代表了&quot;将vendoring直觉推到极致&quot;的另一条路径。</p>
+<blockquote>
+<p>来源：<a href="https://nesbitt.io/2026/02/10/lockfiles-killed-vendoring.html">Andrew Nesbitt</a></p>
+</blockquote>
+<hr>
+<h3>三、Apple视频播客决策可能颠覆播客生态的开放性</h3>
+<p>Anil Dash发出了一篇措辞严厉的警告：Apple在其播客应用中添加视频支持时，<strong>只允许少数预选的商业合作伙伴托管视频流</strong>。这与播客二十年来的开放传统形成鲜明对比——目前任何人都可以在自己的网站上放一个MP3文件，全世界任何人都可以订阅，无需任何人的许可。</p>
+<p>Dash指出这一决策的深远影响：</p>
+<ul>
+<li>播客是<strong>最后一个主要的开放媒体格式</strong>，创作者不受算法驱动（所以你不会听到播客主说&quot;unalive&quot;这种审查词），不受监控广告侵害，不被锁定在单一平台</li>
+<li>独立在线视频平台几乎全部<strong>被同一家私募股权公司收购</strong></li>
+<li>FCC主席Brendan Carr正在打压电视广播——播客正是因为去中心化才免于被同样对待</li>
+<li>Apple还有&quot;回退&quot;视频系统让创作者通过传统标准提供视频，但Apple的应用不识别它</li>
+</ul>
+<p><strong>为什么重要：</strong> 一代人之前，Apple几个人的选择催生了一个开放的播客生态，繁荣了数十年。现在，同样几个人的决定可能摧毁它。利害攸关：<strong>在威权主义威胁言论自由的时代，播客可能是最后一个不容易被捕获的主要媒体格式。</strong></p>
+<blockquote>
+<p>来源：<a href="https://anildash.com/2026/02/28/apple-video-podcast-power/">Anil Dash</a></p>
+</blockquote>
+<hr>
+<h3>四、Altman的OpenAI政治戏码与AI产业的寡头化隐忧</h3>
+<p>Gary Marcus揭露了一出精心编排的政治大戏：Sam Altman在公开支持Dario Amodei的同一天，签署了一份夺走Anthropic业务的交易。据《纽约时报》报道，Altman从周三就开始秘密操作这笔交易——在宣布支持Dario之前，在Trump谴责Anthropic之前，但在Brockman向Trump的PAC捐赠2500万美元之后。</p>
+<p>Marcus的核心论点犀利而直接：&quot;在资本主义中，市场做决定。在寡头政治中，关系和捐款做决定。美国看起来正在从前者过渡到后者。&quot; 他认为Anthropic至少应获得完全相同条件的机会，否则就是腐败。</p>
+<p><strong>为什么重要：</strong> 这不仅是商业竞争的故事，更揭示了AI产业如何与政治权力交织，以及行业关键基础设施的分配如何可能被政治捐款所左右。</p>
+<blockquote>
+<p>来源：<a href="https://garymarcus.substack.com/p/the-whole-thing-was-scam">Marcus on AI</a></p>
+</blockquote>
+<hr>
+<h3>五、开发者工具：GitButler CLI与现代开发工作流</h3>
+<p>Mathew Duggan热情推荐了GitButler CLI，称其为十年来对Git工作流最有意义的改进。核心洞察是：<strong>Git的离线优先设计为在线优先的工作流制造了不必要的摩擦</strong>。在大多数团队中，你不能没有GitHub就合并、部署或获得审批——本地仓库实际上只是&quot;草稿&quot;。</p>
+<p>GitButler解决了三个痛点：</p>
+<ol>
+<li><strong>并行分支</strong>——同时在多个分支上工作，将不同文件分配到不同分支，无需stash/checkout切换</li>
+<li><strong>堆叠PR</strong>——一等公民支持，依赖关系明确，更新自动传播</li>
+<li><strong>简单撤销</strong>——<code>but undo</code>回退一步操作，取代了在reflog中艰难求生的体验</li>
+</ol>
+<blockquote>
+<p>来源：<a href="https://matduggan.com/gitbutler-cli-is-really-good/">matduggan.com</a></p>
+</blockquote>
+<hr>
+<h2>快讯</h2>
+<ul>
+<li><p><strong>Anthropic的&quot;导入记忆&quot;功能实质上就是一段精心设计的提示词(prompt)</strong>，让用户从其他AI服务导出与自己相关的所有记忆数据。Simon Willison一如既往地揭示了&quot;魔法&quot;背后的机制。 <a href="https://simonwillison.net/2026/Mar/1/claude-import-memory/#atom-everything">来源</a></p>
+</li>
+<li><p><strong>Simon Willison展示了用AI构建交互式解释的威力</strong>：对一个词云生成算法不理解时，他让Claude Code构建了一个带有动画和帧步进控制的可视化页面，比任何文档都更好地帮助他理解了&quot;阿基米德螺旋放置&quot;算法。这是应对&quot;认知债务&quot;的有效策略。 <a href="https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/#atom-everything">来源</a></p>
+</li>
+<li><p><strong>加州新法律(AB-1043)要求操作系统在创建账户时收集用户年龄</strong>——包括你在家里设置的树莓派。Ibrahim Diallo指出这类似IRS要求申报非法收入：不是为了执行，而是为了在需要时提供额外的法律杠杆。 <a href="https://idiallo.com/byte-size/how-old-are-you-asked-the-os?src=feed">来源</a></p>
+</li>
+<li><p><strong>macOS Tahoe悄悄移除了磁盘工具中的安全擦除选项</strong>，用户现在必须通过命令行<code>diskutil secureErase</code>来执行多次覆写擦除。Jeff Geerling提供了完整的命令行操作指南。 <a href="https://www.jeffgeerling.com/blog/2026/securely-erase-hard-drive-macos-tahoe/">来源</a></p>
+</li>
+<li><p><strong>代码注释应该以不同于代码的列宽换行</strong>：matklad指出注释内容理想的换行宽度应相对于注释起始位置而言约70列，而非整行的100列——这个&quot;事后看来显而易见&quot;的洞察却几乎没有工具正确支持。 <a href="https://matklad.github.io/2026/02/21/wrapping-code-comments.html">来源</a></p>
+</li>
+<li><p><strong>从零训练LLM的实验发现：给注意力权重矩阵添加偏置(QKV bias)意外改善了GPT-2小模型的测试损失</strong>，尽管现代LLM普遍认为这不必要。作者推测效果可能随模型规模增大而迅速消失。 <a href="https://www.gilesthomas.com/2026/02/llm-from-scratch-32d-interventions-adding-attention-bias">来源</a></p>
+</li>
+<li><p><strong>便携显示器是出差者的福音</strong>：Xe Iaso（日常使用7显示器战斗站的人）对一款$150的15.6寸USB-C便携屏给出了&quot;3/5，我会再买一个&quot;的评价——无聊到难以形容，这正是技术产品的最高境界。 <a href="https://xeiaso.net/blog/2026/portable-monitors-are-good/">来源</a></p>
+</li>
+<li><p><strong>比特币网络目前每秒计算约1 ZH(泽塔哈希)的哈希值</strong>，每年的哈希总量已进入ronna级别(10²⁷)。John Cook以此为切入点科普了那些我们尚未熟悉的SI前缀。 <a href="https://www.johndcook.com/blog/2026/02/22/zettahash/">来源</a></p>
+</li>
+<li><p><strong>特征值的教科书求法与实际计算方向相反</strong>：教科书上让你求行列式多项式的根来找特征值，但实际工程中恰恰相反——用特征值求解器(如QR算法)来求多项式的根。 <a href="https://www.johndcook.com/blog/2026/02/06/eigenvalue-roots/">来源</a></p>
+</li>
+</ul>
+<hr>
+<h2>值得关注</h2>
+<ul>
+<li><p><strong>开源协作模式的范式转移</strong>：从&quot;推送式PR&quot;到&quot;拉取式fork发现&quot;的讨论正在加速。当GitHub考虑让维护者关闭PR功能时，fork发现的基础设施缺失将成为更紧迫的问题。Andrew Nesbitt在ecosyste.ms上的工作（跨包和开源仓库追踪依赖关系）可能成为这一新范式的关键基础设施。</p>
+</li>
+<li><p><strong>gitignore生态的碎片化</strong>：几乎所有工具都声称&quot;使用gitignore语法&quot;，但实际实现千差万别。Andrew Nesbitt提出了类似CommonMark之于Markdown的标准化愿景——一个&quot;CommonIgnore&quot;规范。ripgrep和ag已经朝这个方向迈出了一步，以共享的<code>.ignore</code>文件取代工具专属的忽略文件。</p>
+</li>
+<li><p><strong>CI的&quot;盒子化&quot;趋势</strong>：matklad提出了一种极简CI架构——控制脚本通过SSH代理将命令转发给不同OS的运行器盒子。真正的难题不在YAML配置（大部分YAML是可避免的），而在于获取跨平台异构运行器队列。</p>
+</li>
+<li><p><strong>广播行业的数字化转型</strong>：从Jeff Geerling对NHL冰球赛现代SMPTE 2110转播车的深度探访来看，专业广播正在从SDI向全IP架构过渡，但模拟铜缆音频线仍在外部连接中大量使用。PTP时钟同步的手动设置流程（用手机原子钟应用！）揭示了移动广播环境中的实际挑战。</p>
+</li>
+<li><p><strong>人类寿命遗传率研究的新视角</strong>：一篇Science论文声称寿命遗传率约50%，但DYNOMIGHT的深度解读指出这是在&quot;移除所有非衰老相关死亡&quot;的假想世界中的模拟结果。按现代外源性死亡率水平计算，实际数字更接近35-45%。这是一个关于&quot;遗传率不是柏拉图式的理念，而是观察统计量&quot;的优秀提醒。</p>
+</li>
+</ul>
+
+      </div>
+    </div>
+    
+    <div id="panel-podcast" class="tab-panel">
+      <div class="podcast-content">
+        <div class="podcast-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+          PODCAST SCRIPT
+        </div>
+        <p>大家好，欢迎来到2026年3月1日的 YOMOO 每日AI快送。</p>
+<p>我跟你说，今天这期内容信息量巨大，但有一个主题贯穿始终，听完你可能会对整个软件行业的未来产生全新的认知。先给你抛一个数字：1100美元。就这么点钱，Cloudflare的一个工程经理，用AI在几天之内，复刻了Next.js百分之九十四的API功能。你想想，Next.js是多少工程师花了多少年打磨出来的产品？1100美元，几天，94%。这个数字背后的含义，细思极恐。</p>
+<p>好，咱们从头说起。最近开源世界发生了一件标志性的事情。CPython，就是Python语言的官方实现，全球最重要的开源项目之一，它的代码提交历史里，出现了一个叫claude的用户。没错，就是AI。社区里甚至流传出一个小技巧：在GitHub上屏蔽claude这个用户，这样每次你访问有它提交代码的仓库时，系统就会提醒你。你看，当连Python这种级别的项目都开始接纳AI写的代码，这意味着什么？AI已经不是你的辅助工具了，它变成了你的同事。</p>
+<p>但这只是故事的开始。更深层的变化，是整个开源协作模式正在瓦解。</p>
+<p>有个叫Scott Werner的人写了一篇文章，在社区引发了巨大的讨论。他用了一个特别精妙的比喻，把开源比作社区种子图书馆。过去大家种了好品种，会把种子送回图书馆分享。但现在呢？三件事同时在发生。</p>
+<p>第一，维护者被淹没了。tldraw直接关闭了所有外部PR。cURL，就是那个几乎每台电脑都在用的网络工具，关闭了漏洞赏金计划，为什么？因为AI提交的漏洞报告占了20%，但有效率只有5%。Ghostty项目更绝，几乎全面禁止AI生成的代码。维护者的收件箱被垃圾淹没了，这谁受得了？</p>
+<p>第二，真正有能力贡献代码的人不来了。你想，过去写代码很贵，提交很便宜，所以大家愿意把自己辛苦写的代码贡献回社区。但现在反过来了，写代码变得很便宜，AI几分钟就搞定了，但让你的代码被接受合并，这个沟通成本反而变高了。结果就是越来越多的人选择自己fork一份改改就用了，谁还费劲往上游提交啊？</p>
+<p>第三，也是最隐蔽的一层冲击。Werner自己说了一个亲身经历：他用Claude花了20分钟，构建了一个错误追踪系统，取代了他本来准备注册的一个SaaS服务。那个SaaS公司永远不会知道它失去了一个用户。这个用户从来没有出现在它的数据里，没有注册，没有试用，没有流失，就是从来不存在。你想想，有多少SaaS公司正在失去这种它们永远无法感知的用户？</p>
+<p>然后就到了今天最炸裂的案例。Cloudflare那位工程经理，花了大约1100美元的API费用，用AI复刻了Next.js。而且你知道最讽刺的是什么吗？他用的蓝图，就是Next.js团队自己精心编写的测试套件。Werner的原话是这样说的：&quot;就像花了多年写了世界上最详尽的日记，然后发现有人用它变成了你，只是稍微快一些。&quot;</p>
+<p>这句话太狠了。</p>
+<p>所以现在开源面临的核心问题是什么？过去这个生态有一个良性循环：用户变成贡献者，贡献者变成维护者。这个循环成立的前提是，参与比不参与更容易。但当AI让自给自足的成本低于沟通的成本时，这个循环就断了。Werner呼吁建立一种新的模式，不是传统的提交PR然后等审查，而是一种fork然后再吸收的模式。</p>
+<p>说到这个，有一个特别打动我的细节。Andrew Nesbitt，开源圈子里一个很受尊重的开发者，他在一个热门开源项目里发现了一个bug，也写好了修复代码。但他看到维护者已经被issues和PR淹没了，他做了一个决定：不提交。他说这不是冷漠，这是尊重。因为即使你的PR写着&quot;不着急慢慢看&quot;，它出现在维护者收件箱里的那一刻，就已经制造了一种无形的义务感。</p>
+<p>他还提出了一个特别有洞察力的观点。Git最初设计的模式其实是拉取模式，维护者主动去看他想看的东西。但GitHub把它改造成了推送模式，所有人都可以往你的审查队列里塞东西。在AI泛滥的时代，拉取模式反而可能是更好的选择。AI可以随便fork随便生成垃圾代码，但如果没人主动去拉取，什么都不会进入任何人的收件箱。</p>
+<p>好，咱们换个话题，聊点让人担忧的事情。</p>
+<p>Apple最近在播客应用里加了视频支持，听起来挺好的对吧？但Anil Dash发了一篇措辞非常严厉的文章说，Apple的做法是只允许少数预选的商业合作伙伴来托管视频流。注意，这跟播客二十年来的传统完全背道而驰。</p>
+<p>你知道播客为什么了不起吗？因为它可能是互联网上最后一个真正开放的主要媒体格式。任何人都可以在自己的网站上放一个音频文件，全世界任何人都可以订阅，不需要任何人的许可。不受算法驱动，所以你不会听到播客主说那些奇怪的审查替代词。不受监控广告侵害，不被锁定在任何单一平台。</p>
+<p>但Apple这一步，可能会打破这一切。Dash提醒我们，一代人之前，Apple几个人的选择催生了一个开放的播客生态系统，繁荣了二十年。现在，同样几个人的决定可能摧毁它。他的原话更狠：在威权主义威胁言论自由的时代，播客可能是最后一个不容易被捕获的主要媒体格式。这话听着有点重，但你仔细想想，他说的不无道理。</p>
+<p>再来说一个精彩的政治戏码。Gary Marcus揭露了一件事：Sam Altman在公开宣布支持Anthropic创始人Dario Amodei的同一天，签署了一份抢走Anthropic业务的交易。而且据纽约时报报道，Altman从前一天就开始秘密操作这笔交易了，时间线非常微妙——是在OpenAI联合创始人Brockman向特朗普的PAC捐赠了2500万美元之后。Marcus的评论一针见血：&quot;在资本主义中，市场做决定。在寡头政治中，关系和捐款做决定。美国看起来正在从前者过渡到后者。&quot;AI产业的竞争，已经不只是技术的竞争了。</p>
+<p>好，说完了这些大话题，咱们快速过几条值得关注的消息。</p>
+<p>Anthropic新出的&quot;导入记忆&quot;功能，Simon Willison一揭开底，发现本质就是一段精心设计的提示词，让你从其他AI服务导出记忆数据。所谓魔法，不过如此。</p>
+<p>Simon还展示了一个特别酷的用法：他对一个词云生成算法搞不懂，就让Claude Code给他构建了一个带动画和帧步进控制的可视化页面。比任何文档都好用。这个思路值得每个人学习——看不懂代码？让AI帮你把它变成可以互动的动画。</p>
+<p>加州出了一个新法律，要求操作系统在创建账户时收集用户年龄，包括你在家里摆弄的树莓派。有人吐槽说这跟IRS要求你申报非法收入一个道理：不是为了真的执行，而是为了在需要时多一根法律大棒。</p>
+<p>macOS Tahoe悄悄把磁盘工具里的安全擦除选项给去掉了，现在你想安全擦除硬盘得自己敲命令行。注意，如果你要处理旧硬盘，记得去查Jeff Geerling写的命令行指南。</p>
+<p>还有一个特别有意思的小发现：有人指出代码注释的换行宽度应该跟代码不一样。代码你可能习惯100列换行，但注释内容理想的换行宽度应该是相对于注释起始位置的70列左右。听起来是个小事，但事后看来确实显而易见，偏偏几乎没有工具正确支持这一点。</p>
+<p>最后说一个开发者工具推荐。GitButler CLI被称为十年来对Git工作流最有意义的改进。它的核心洞察是：Git的离线优先设计，给我们这些在线优先工作的人制造了太多不必要的摩擦。GitButler让你可以同时在多个分支上工作，把不同文件分配到不同分支，不用再反复stash和checkout。还有一个杀手功能，but undo，一键回退上一步操作，再也不用在reflog里痛苦地挣扎了。</p>
+<p>所以你看，今天的内容归结起来就是一句话：AI不只是在改变我们写代码的方式，它在改变整个软件行业协作、竞争和分发的底层逻辑。开源的循环在断裂，SaaS的用户在隐身消失，播客的开放性在被蚕食，而AI产业本身正在跟政治权力深度交织。这些变化不是未来时，是正在进行时。</p>
+<p>如果您觉得我们的节目对您有帮助，请帮忙分享、转发给您的朋友，也欢迎直接回复邮件给我们提建议。好了，今天就到这里，我们明天见！</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      YOMOO 每日AI快送 &copy; 2026 &middot; <a href="../index.html">所有期刊</a>
+    </div>
+    <div class="footer-powered">Powered by YOMOO LLC</div>
+  </footer>
+
+  
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (typeof umami !== 'undefined') umami.track('tab-switch', { tab: tab });
+    }
+  </script>
+
+  <script>
+  (function() {
+    var u = typeof umami !== 'undefined' ? umami : null;
+    function t(name, data) { if (u) u.track(name, data || {}); }
+
+    // --- Audio tracking ---
+    var audio = document.querySelector('.audio-player audio');
+    if (audio) {
+      var milestones = [25, 50, 75, 100];
+      var reached = {};
+      audio.addEventListener('play', function() { t('audio-play'); });
+      audio.addEventListener('pause', function() {
+        if (!audio.ended) t('audio-pause', { time: Math.round(audio.currentTime) });
+      });
+      audio.addEventListener('ended', function() { t('audio-complete'); });
+      audio.addEventListener('timeupdate', function() {
+        if (!audio.duration) return;
+        var pct = Math.round(audio.currentTime / audio.duration * 100);
+        for (var i = 0; i < milestones.length; i++) {
+          if (pct >= milestones[i] && !reached[milestones[i]]) {
+            reached[milestones[i]] = true;
+            t('audio-progress', { milestone: milestones[i] });
+          }
+        }
+      });
+    }
+
+    // --- MP3 download tracking ---
+    var dl = document.querySelector('.audio-download');
+    if (dl) dl.addEventListener('click', function() { t('mp3-download'); });
+
+    // --- Outbound link tracking ---
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (href && href.startsWith('http') && !href.includes('daily.yomoo.net')) {
+        t('outbound-link', { url: href });
+      }
+    });
+
+    // --- "所有期刊" link tracking ---
+    var allEpisodes = document.querySelector('.site-footer a[href*="index.html"]');
+    if (allEpisodes) allEpisodes.addEventListener('click', function() { t('nav-all-episodes'); });
+
+    // --- Scroll depth tracking ---
+    var scrollMarks = {};
+    var thresholds = [25, 50, 75, 100];
+    window.addEventListener('scroll', function() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h <= 0) return;
+      var pct = Math.round(window.scrollY / h * 100);
+      for (var i = 0; i < thresholds.length; i++) {
+        if (pct >= thresholds[i] && !scrollMarks[thresholds[i]]) {
+          scrollMarks[thresholds[i]] = true;
+          t('scroll-depth', { depth: thresholds[i] });
+        }
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
