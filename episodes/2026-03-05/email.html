@@ -43,7 +43,7 @@
               <td style="padding: 14px 16px; text-align: center;">
                 <a href="https://daily.yomoo.net/episodes/2026-03-05/index.html" style="color: #E8722A; text-decoration: none; font-size: 14px; font-weight: 600;">&#9654; 在线收听播客</a>
                 <span style="color: #8a7e6e; margin: 0 8px;">|</span>
-                <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-05/yomoo-2026-03-05.mp3" style="color: #6b5e4f; text-decoration: none; font-size: 14px;">下载 MP3</a>
+                <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-05-mmdvpc0v/yomoo-2026-03-05.mp3" style="color: #6b5e4f; text-decoration: none; font-size: 14px;">下载 MP3</a>
               </td>
             </tr>
           </table>
@@ -52,17 +52,103 @@
           <!-- Report content -->
           <tr>
             <td style="padding: 24px 32px 40px;">
-              <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">每日简报已生成，保存在 <code style="font-family: 'SF Mono', 'Fira Code', Consolas, monospace; font-size: 0.85em; padding: 2px 6px; background-color: #f5efe6; border-radius: 3px; color: #C4561A;">output/daily-report-2026-03-05.md</code>。</p>
-<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">本期报告涵盖六大主题板块：</p>
-<ol style="margin: 12px 0 16px 20px; padding: 0; font-size: 15px; color: #3d3529;">
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">MacBook Neo</strong> — 苹果599美元笔记本正式进军低价市场</li>
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">Qwen团队震荡</strong> — 阿里核心AI团队集体出走，开源前景存疑</li>
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">AI与GPL之争</strong> — chardet重写事件引发版权根本性讨论</li>
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">工程简单性</strong> — 三篇文章共同指向&quot;复杂性被过度奖励&quot;的行业痼疾</li>
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">macOS Tahoe阵痛</strong> — 窗口缩放修复被撤回、活动窗口难辨识、升级强推</li>
-<li style="margin-bottom: 6px; line-height: 1.75;"><strong style="color: #1a1410; font-weight: 600;">AI可靠性</strong> — 逻辑回归与LLM的数据/参数比惊人相似，提示敏感性不容忽视</li>
-</ol>
-<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">快速扫描部分另收录了包管理器安全、JJ LSP进展、Anubis更新等8条速览。</p>
+              <h1 style="font-size: 24px; font-weight: 800; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">每日简报 | 2026年3月5日</h1>
+<h2 style="font-size: 20px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px; border-bottom: 1px solid #e8e2d9; padding-bottom: 8px;">要点概览</h2>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">AI编程工具的采用正在加速分化：企业用户被锁定在低效工具中，而灵活的小团队正获得前所未有的生产力优势。与此同时，开源许可面临AI时代的根本性挑战——编程代理能否通过&quot;洁净室&quot;方式合法地重新授权代码？苹果在AI领域继续呈现矛盾姿态：Xcode已拥抱第三方编程代理，但自家Siri的智能升级却再度推迟。</p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h2 style="font-size: 20px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px; border-bottom: 1px solid #e8e2d9; padding-bottom: 8px;">主要报道</h2>
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">AI编程工具：两极分化正在加速</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">一条巨大的鸿沟正在AI用户之间形成。</strong> Martin Alderson在最新文章中揭示了一个令人震惊的现实：AI工具的使用者正分裂为两个截然不同的群体。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;能力用户&quot;（power users）已经深度整合了Claude Code等终端工具，甚至非技术人员也在用它们完成从财务建模到数据分析的各种任务。一位高管在Claude Code的帮助下，仅用两三个提示就将一个30页的复杂Excel财务模型转换为Python代码。</p>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;这实际上导致了一种局面：小公司的员工能比大企业的同行高效得多。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">而另一端，大量企业用户被困在微软Copilot的围墙花园中。讽刺的是，<strong style="color: #1a1410; font-weight: 600;">微软自己内部正在部署Claude Code</strong>，同时却把Copilot卖给企业客户。企业的锁定环境、缺乏API的遗留系统、外包的工程团队——这三重枷锁正在制造&quot;存在性风险&quot;。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">为何重要：</strong> 这不仅是工具差异的问题。当一个微型团队能轻松超越千倍规模的竞争对手时，企业竞争的底层逻辑正在重写。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：<a style="color: #E8722A; text-decoration: underline;" href="https://martinalderson.com/posts/two-kinds-of-ai-users-are-emerging/">Martin Alderson</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">开源许可的灰色地带：AI能&quot;洁净室&quot;重写代码吗？</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Python知名库chardet的维护者Dan Blanchard用Claude Code重写了整个代码库，并将许可证从LGPL改为MIT——这引发了一场关于AI时代知识产权的根本性争论。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">原作者Mark Pilgrim迅速回应：<strong style="color: #1a1410; font-weight: 600;">&quot;他们无权重新授权此项目。&quot;</strong> Pilgrim认为，无论是否&quot;完全重写&quot;，维护者曾广泛接触原始代码，这不构成合法的洁净室实现。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Dan的反驳基于可量化证据：使用代码抄袭检测工具JPlag，新版本与旧版本的最大相似度仅为1.29%。他强调自己在空仓库中开始工作，明确指示Claude不引用LGPL代码。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Simon Willison指出了几个令人不安的复杂因素：</p>
+<ul style="margin: 12px 0 16px 20px; padding: 0; font-size: 15px; color: #3d3529;">
+<li style="margin-bottom: 6px; line-height: 1.75;">Dan已深度参与chardet超过十年</li>
+<li style="margin-bottom: 6px; line-height: 1.75;">Claude本身很可能在训练数据中包含了chardet</li>
+<li style="margin-bottom: 6px; line-height: 1.75;">新版本沿用了相同的PyPI包名</li>
+</ul>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;一旦商业公司意识到他们严密保护的知识产权面临威胁，我预计我们将看到一些资金充裕的诉讼。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">为何重要：</strong> 这是AI时代知识产权争议的缩影。编程代理正在使&quot;重新实现&quot;变得极其廉价——先冲击开源世界，很快就会蔓延到商业领域。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：<a style="color: #E8722A; text-decoration: underline;" href="https://simonwillison.net/2026/Mar/5/chardet/">Simon Willison&#39;s Weblog</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">苹果的AI矛盾：Xcode拥抱代理，Siri继续拖延</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">苹果在AI战略上展现出截然不同的两面。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">积极的一面：</strong> Xcode 26.3正式引入&quot;代理编码&quot;支持，允许Anthropic的Claude Agent和OpenAI的Codex等第三方代理直接在Xcode中工作。John Gruber注意到，苹果选择在WWDC前四个月发布这一功能——这种紧迫感本身就说明问题。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">令人沮丧的一面：</strong> Bloomberg的Mark Gurman报道，新版Siri的个性化功能可能再次推迟。原计划在iOS 26.4（3月）发布的功能，现在可能要等到iOS 26.5（5月）甚至iOS 27（9月）。尤其是让Siri访问个人数据的能力——比如搜索旧短信找到朋友分享的播客并播放——&quot;特别可能推迟&quot;。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Gruber的判断一针见血：</p>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;如果这些功能要在iOS 26.4发布，它们现在内部应该状态良好。如果现在内部状态糟糕……某些地方仍然有问题。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：Daring Fireball, <a style="color: #E8722A; text-decoration: underline;" href="https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/">Apple Newsroom</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">Cory Doctorow正式离开Twitter：平台&quot;降质化&quot;的终章</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Cory Doctorow发表了一篇长文宣布永久离开Twitter，并以此为契机深入分析了他所称的&quot;平台降质化&quot;（enshittification）现象——以及为何&quot;不耐心的敌人&quot;反而加速了积极变革。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">核心论点：缓慢恶化的危机因为太渐进而无法激发行动，但突然的危机能催化变革。Doctorow将Musk对Twitter的管理比作&quot;对青蛙使用喷火器&quot;——不是慢慢加热，而是直接烤焦。</p>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;如果我必须有敌人，就让他们是不耐心的敌人。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Doctorow已在自己的服务器上建立了Bluesky账号（@doctorow.pluralistic.net），关键是：他使用的是Bluesky协议，但<strong style="color: #1a1410; font-weight: 600;">不是</strong>Bluesky公司的服务。这意味着他无需同意Bluesky&quot;令人不齿的&quot;强制仲裁条款。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">他将此类比为普京入侵乌克兰如何迫使欧洲加速脱离化石燃料——三年内从落后数十年变为领先十年。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">为何重要：</strong> 联邦式社交媒体的实际可用性正在成熟。当像Doctorow这样的意见领袖能够在不接受任何公司条款的情况下参与社交网络时，&quot;协议而非平台&quot;的愿景正在变为现实。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：<a style="color: #E8722A; text-decoration: underline;" href="https://pluralistic.net/2026/03/05/executive-dysfunction/">Pluralistic</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">SpaceX与xAI合并：是战略整合还是纾困？</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Elon Musk宣布SpaceX与xAI（此前已与X合并）的大合并。官方叙事是&quot;地球上（和地球外）最雄心勃勃的垂直整合创新引擎&quot;。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Gary Marcus提出了四种理论，但更倾向于第四种——<strong style="color: #1a1410; font-weight: 600;">这本质上是一次纾困行动</strong>。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">The Information披露的数据令人瞩目：xAI以约1000倍营收进行估值交易，而它身处一个竞争日趋激烈、价格战频发的市场。Marcus直言：</p>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;如果我持有SpaceX股份，我会觉得Elon为自己的公司严重多付了。用差不多的钱他们本可以收购Anthropic。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Marcus还引用了微软内部备忘录，警告员工OpenClaw（一个浏览器驱动代理）&quot;不是计算机使用的已解决版本&quot;——这与Musk大举合并AI公司的叙事形成了微妙对比。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：<a style="color: #E8722A; text-decoration: underline;" href="https://garymarcus.substack.com/p/four-theories-about-the-spacex-xai">Marcus on AI</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h3 style="font-size: 17px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px;">AI不可信任：从报税到人命</h3>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">Gary Marcus援引《纽约时报》的最新报道指出，生成式AI在税务领域的表现依然不可靠。他将此与美国军方使用AI系统的趋势并置，发出尖锐警告：</p>
+<blockquote style="margin: 16px 0; padding: 12px 16px; border-left: 3px solid #E8722A; background-color: rgba(232,114,42,0.06); font-style: italic; color: #3d3529;">
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">&quot;用一个你不敢信任来报税的系统去炸人。2026年的缩影。&quot;</p>
+</blockquote>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;">与此同时，Marcus追踪的律师AI幻觉案例数据库在不到12个月内从112例增长到914例——<strong style="color: #1a1410; font-weight: 600;">8倍增长</strong>。微软AI CEO Mustafa Suleyman向《金融时报》做出的宏大承诺，与LLM持续存在的推理缺陷和幻觉问题形成鲜明对比。</p>
+<p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><em>来源：<a style="color: #E8722A; text-decoration: underline;" href="https://garymarcus.substack.com/p/dont-trust-generative-ai-to-do-your">Marcus on AI</a>, <a style="color: #E8722A; text-decoration: underline;" href="https://garymarcus.substack.com/p/promises-are-cheap">Marcus on AI</a></em></p>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h2 style="font-size: 20px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px; border-bottom: 1px solid #e8e2d9; padding-bottom: 8px;">快讯</h2>
+<ul style="margin: 12px 0 16px 20px; padding: 0; font-size: 15px; color: #3d3529;">
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">Antirez（Redis创始人）提出&quot;自动编程&quot;概念</strong>，主张将AI辅助编程与&quot;氛围编码&quot;（vibe coding）严格区分——前者是程序员主导的高质量生产，后者是放手让AI随意生成。&quot;编程现在是自动的，愿景还不是。&quot; <em><a style="color: #E8722A; text-decoration: underline;" href="http://antirez.com/news/159">来源</a></em></p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">Steve Jobs 2007年的话被重新发掘：</strong>&quot;我们就是不能发布垃圾。&quot; Gruber认为Jobs会热爱MacBook Neo——尤其是苹果自研芯片的事实。 <em><a style="color: #E8722A; text-decoration: underline;" href="https://www.youtube.com/watch?v=U37Ds3RvyoM">来源</a></em></p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">Reese&#39;s花生酱杯的创始人孙子公开炮轰：</strong>&quot;它们现在味道像屎。&quot; Hershey大量用复合巧克力涂层替代真正的牛奶巧克力，连Girl Scout饼干也未能幸免。 <em><a style="color: #E8722A; text-decoration: underline;" href="https://apnews.com/article/reeses-peanut-butter-cups-hershey-chocolate-1a66ec75247fd146888b7a747a740cd3">来源</a></em></p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">Homebrew Computer Club成立51周年</strong>（1975年3月5日）。Steve Wozniak称第一次会议直接启发了Apple I的设计。该俱乐部也是软件盗版史的起点——Altair Basic的泄露引发了Bill Gates著名的《致爱好者公开信》。 <em><a style="color: #E8722A; text-decoration: underline;" href="https://dfarq.homeip.net/homebrew-computer-club-in-menlo-park/">来源</a></em></p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">&quot;每个人都是一个微服务&quot;</strong>：Grant Slatton回忆早期AWS经验，主张服务应当是&quot;一个人能装进脑子里的大小&quot;。S3早期由不到20名工程师构建和运维。 <em>来源</em></p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">OpenAI发布Codex桌面应用</strong>，基于Electron构建，支持技能系统和自动化调度任务。自GPT-5.2-Codex发布以来用户量已翻倍，超过100万开发者使用。 <em><a style="color: #E8722A; text-decoration: underline;" href="https://simonwillison.net/2026/Feb/2/introducing-the-codex-app/">来源</a></em></p>
+</li>
+</ul>
+<hr style="border: none; height: 1px; background-color: #e8e2d9; margin: 24px 0;">
+<h2 style="font-size: 20px; font-weight: 700; color: #1a1410; line-height: 1.35; margin-top: 24px; margin-bottom: 12px; border-bottom: 1px solid #e8e2d9; padding-bottom: 8px;">值得关注</h2>
+<ul style="margin: 12px 0 16px 20px; padding: 0; font-size: 15px; color: #3d3529;">
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">AI编程代理的知识产权风暴正在酝酿。</strong> chardet事件只是冰山一角。当商业公司意识到编程代理可以在数小时内&quot;洁净室&quot;重新实现其核心IP时，重大诉讼将不可避免。</p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">企业AI工具的鸿沟可能引发并购浪潮。</strong> 大型企业被困在低效AI工具中的现实，可能促使它们收购已经AI原生化的小型竞争者，而非试图从内部变革。</p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">苹果的AI叙事面临WWDC大考。</strong> 如果个性化Siri功能持续推迟到接近iOS 27，苹果将不得不在WWDC上重新定义其AI战略的可信度。Xcode拥抱第三方代理的决定暗示苹果可能正在务实地接受&quot;平台而非产品&quot;的AI定位。</p>
+</li>
+<li style="margin-bottom: 6px; line-height: 1.75;"><p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.85; color: #3d3529;"><strong style="color: #1a1410; font-weight: 600;">&quot;数据应该是代码&quot;的理念正在蔓延。</strong> 从Makefile到CloudFormation再到GitHub Actions，越来越多的开发者认识到，用真正的编程语言生成配置数据远优于在YAML中构建蹩脚的DSL。这一趋势与AI代理的崛起可能产生共振。</p>
+</li>
+</ul>
 
             </td>
           </tr>
