@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fffbf5" media="(prefers-color-scheme: light)">
+  <title>YOMOO 每日AI快送 — 2026-03-07</title>
+  <meta name="description" content="iOS史上最强漏洞工具包Coruna曝光，23个漏洞在间谍组织与黑产间流转，揭示零日漏洞&quot;二手市场&quot;的存在；AI代理安全隐患加剧，OpenClaw被批为任意代码执行后门；Anthropic与五角大楼合作引发AI公司品牌定位之争，顶级模型加速商品化。">
+  <link rel="canonical" href="https://daily.yomoo.net/episodes/2026-03-07/index.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="YOMOO 每日AI快送 — 2026-03-07">
+  <meta property="og:description" content="iOS史上最强漏洞工具包Coruna曝光，23个漏洞在间谍组织与黑产间流转，揭示零日漏洞&quot;二手市场&quot;的存在；AI代理安全隐患加剧，OpenClaw被批为任意代码执行后门；Anthropic与五角大楼合作引发AI公司品牌定位之争，顶级模型加速商品化。">
+  <meta property="og:url" content="https://daily.yomoo.net/episodes/2026-03-07/index.html">
+  <meta property="og:site_name" content="YOMOO 每日AI快送">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:published_time" content="2026-03-07T08:00:00+08:00">
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="科技新闻">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="YOMOO 每日AI快送 — 2026-03-07">
+  <meta name="twitter:description" content="iOS史上最强漏洞工具包Coruna曝光，23个漏洞在间谍组织与黑产间流转，揭示零日漏洞&quot;二手市场&quot;的存在；AI代理安全隐患加剧，OpenClaw被批为任意代码执行后门；Anthropic与五角大楼合作引发AI公司品牌定位之争，顶级模型加速商品化。">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "YOMOO 每日AI快送 — 2026-03-07",
+    "description": "iOS史上最强漏洞工具包Coruna曝光，23个漏洞在间谍组织与黑产间流转，揭示零日漏洞\"二手市场\"的存在；AI代理安全隐患加剧，OpenClaw被批为任意代码执行后门；Anthropic与五角大楼合作引发AI公司品牌定位之争，顶级模型加速商品化。",
+    "datePublished": "2026-03-07T08:00:00+08:00",
+    "dateModified": "2026-03-07T08:00:00+08:00",
+    "author": {
+      "@type": "Organization",
+      "name": "YOMOO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YOMOO",
+      "url": "https://daily.yomoo.net"
+    },
+    "mainEntityOfPage": "https://daily.yomoo.net/episodes/2026-03-07/index.html",
+    "audio": {
+      "@type": "AudioObject",
+      "contentUrl": "https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-07/yomoo-2026-03-07.mp3",
+      "encodingFormat": "audio/mpeg"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --y-amber: #E8722A;
+      --y-amber-soft: #F4945E;
+      --y-amber-deep: #C4561A;
+      --y-amber-glow: rgba(232,114,42,0.12);
+      --y-amber-border: rgba(232,114,42,0.25);
+      --y-gold: #D4A053;
+      --bg: #fffbf5;
+      --bg-card: #ffffff;
+      --bg-elevated: #fff8ef;
+      --bg-subtle: #f5efe6;
+      --text-primary: #1a1410;
+      --text-body: #3d3529;
+      --text-secondary: #8a7e6e;
+      --text-muted: #b5a898;
+      --border: rgba(26,20,16,0.08);
+      --border-strong: rgba(26,20,16,0.14);
+      --shadow-sm: 0 1px 3px rgba(26,20,16,0.04);
+      --shadow-md: 0 4px 16px rgba(26,20,16,0.06);
+      --shadow-lg: 0 8px 32px rgba(26,20,16,0.08);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+      --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --y-amber: #F4945E;
+        --y-amber-soft: #F9B88A;
+        --y-amber-deep: #E8722A;
+        --y-amber-glow: rgba(244,148,94,0.1);
+        --y-amber-border: rgba(244,148,94,0.2);
+        --y-gold: #E8BD7A;
+        --bg: #1a1410;
+        --bg-card: #231e18;
+        --bg-elevated: #2a241d;
+        --bg-subtle: #1f1a14;
+        --text-primary: #f5efe6;
+        --text-body: #d4cbbf;
+        --text-secondary: #8a7e6e;
+        --text-muted: #5c5347;
+        --border: rgba(245,239,230,0.06);
+        --border-strong: rgba(245,239,230,0.12);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+        --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: relative;
+      padding: calc(env(safe-area-inset-top, 0px) + 2.5rem) 1.25rem 1.5rem;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--y-amber-deep), var(--y-amber), var(--y-gold));
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--y-amber), var(--y-gold));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 15px;
+      color: white;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 8px rgba(232,114,42,0.3);
+    }
+
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== TABS ===== */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .tabs-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.25rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.85rem 0;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn svg { opacity: 0.5; transition: opacity 0.3s ease; }
+    .tab-btn.active svg { opacity: 1; }
+
+    .tab-btn.active {
+      color: var(--y-amber);
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--y-amber);
+      border-radius: 1px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab-btn.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* ===== MAIN ===== */
+    .content-area {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== AUDIO PLAYER ===== */
+    .audio-player {
+      max-width: 720px;
+      width: 100%;
+      margin: 1.25rem auto;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--y-amber-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-sizing: border-box;
+    }
+
+    .audio-player-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.6rem;
+    }
+
+    .audio-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--y-amber);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .audio-download:hover {
+      background: var(--y-amber-glow);
+    }
+
+    /* ===== REPORT CONTENT ===== */
+    .report-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .report-content h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin: 2rem 0 1rem;
+    }
+
+    .report-content h1:first-child {
+      margin-top: 0;
+    }
+
+    .report-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .report-content p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .report-content ul, .report-content ol {
+      margin: 0.75rem 0 1.25rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    .report-content li {
+      margin-bottom: 0.4rem;
+      line-height: 1.75;
+    }
+
+    .report-content li::marker {
+      color: var(--y-amber);
+    }
+
+    .report-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .report-content a {
+      color: var(--y-amber);
+      text-decoration: none;
+      border-bottom: 1px solid var(--y-amber-border);
+      transition: border-color 0.2s ease;
+    }
+
+    .report-content a:hover {
+      border-color: var(--y-amber);
+    }
+
+    .report-content blockquote {
+      margin: 1.25rem 0;
+      padding: 0.85rem 1.15rem;
+      border-left: 3px solid var(--y-amber);
+      background: var(--y-amber-glow);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    .report-content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .report-content hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+      margin: 2rem 0;
+    }
+
+    .report-content code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      padding: 0.15em 0.45em;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      color: var(--y-amber-deep);
+    }
+
+    .report-content pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .report-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-body);
+    }
+
+    .report-content img {
+      max-width: 100%;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== PODCAST TAB ===== */
+    .podcast-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .podcast-content p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      text-indent: 2em;
+    }
+
+    .podcast-content p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 3.2em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.8;
+      margin: 0.08em 0.12em 0 0;
+      color: var(--y-amber);
+    }
+
+    .podcast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--y-amber-glow);
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+    }
+
+    .podcast-badge svg { flex-shrink: 0; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-powered {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 768px) {
+      .site-header { padding-top: 3rem; padding-bottom: 2rem; }
+      .content-area { padding: 0 2rem; }
+      .tabs-inner { padding: 0 2rem; }
+      .tab-btn { font-size: 0.88rem; padding: 1rem 0; }
+      .report-content { padding: 2rem 0 4rem; }
+      .podcast-content { padding: 2rem 0 4rem; }
+    }
+
+    @media (max-width: 374px) {
+      html { font-size: 14px; }
+    }
+
+    /* ===== SCROLL BAR ===== */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8864a5e3-4f85-4cb6-9565-d7a9538027df"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">Y</div>
+      <span class="header-name">YOMOO</span>
+    </div>
+    <h1 class="header-title">每日AI快送</h1>
+    <div class="header-date">2026-03-07</div>
+  </header>
+
+  
+  <nav class="tabs-container">
+    <div class="tabs-inner">
+      <button class="tab-btn active" data-tab="report" onclick="switchTab('report')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        每日简报
+      </button>
+      <button class="tab-btn" data-tab="podcast" onclick="switchTab('podcast')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        播客文案
+      </button>
+    </div>
+  </nav>
+
+  <div class="audio-player">
+        <div class="audio-player-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>收听音频版</span>
+        </div>
+        <audio controls preload="metadata">
+          <source src="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-07/yomoo-2026-03-07.mp3" type="audio/mpeg">
+        </audio>
+        <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-07/yomoo-2026-03-07.mp3" class="audio-download" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          下载 MP3
+        </a>
+      </div>
+
+  <main class="content-area">
+    <div id="panel-report" class="tab-panel active">
+      <div class="report-content">
+        <h1>每日科技简报 | 2026年3月7日</h1>
+<h2>要点速览</h2>
+<p>iOS史上最强漏洞工具包Coruna曝光，23个漏洞从间谍软件厂商流入俄罗斯情报机构再到中国黑产，揭示零日漏洞&quot;二手市场&quot;的存在。AI代理安全问题持续发酵，开源工具OpenClaw被指为&quot;eval-as-a-service&quot;，与此前报道的编程代理沙箱化挑战形成呼应。</p>
+<hr>
+<h2>重点报道</h2>
+<h3>iOS遭遇&quot;核弹级&quot;漏洞工具包Coruna：零日漏洞的二手市场浮出水面</h3>
+<p>Google威胁情报团队（GTIG）本周披露了一个名为<strong>Coruna</strong>的iOS漏洞利用工具包，堪称近年来移动安全领域最重磅的发现。该工具包包含<strong>5条完整的iOS攻击链和23个漏洞</strong>，覆盖iOS 13.0到17.2.1（2019年9月至2023年12月），影响范围横跨四年多的iPhone机型。</p>
+<p>真正令安全界震惊的不是漏洞数量，而是它的<strong>扩散路径</strong>。GTIG追踪发现，Coruna最初由某监控软件厂商的客户在&quot;高度定向行动&quot;中使用；随后被疑似俄罗斯间谍组织UNC6353用于针对乌克兰用户的水坑攻击（Watering Hole Attack，即入侵目标常访问的网站来感染访客）；最终又出现在中国以牟利为动机的威胁组织UNC6691的大规模攻击活动中。</p>
+<p>GTIG指出，这种扩散&quot;暗示存在一个活跃的零日漏洞&#39;二手市场&#39;&quot;。这意味着即便原始漏洞被修补，攻击技术本身——包括非公开的利用方法和安全机制绕过手段——已经在多个威胁组织间流转和复用。这比单个漏洞被利用严重得多，它意味着<strong>高级攻击能力正在加速民主化</strong>，从国家级行为者向普通网络犯罪团伙下沉。</p>
+<p>对普通用户而言，及时更新iOS版本仍是最有效的防护。但这一事件对整个安全行业的警示在于：漏洞治理不能只关注&quot;补丁是否发布&quot;，还需要关注攻击技术的传播生态。</p>
+<blockquote>
+<p>来源：<a href="https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit">Google Threat Intelligence Blog</a>，经<a href="https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit">Daring Fireball</a>转载</p>
+</blockquote>
+<hr>
+<h3>AI代理安全再敲警钟：OpenClaw被比作&quot;eval-as-a-service&quot;</h3>
+<p>此前我们连续报道了AI编程代理面临的系统性安全挑战——从Cline遭提示词注入导致NPM包被污染，到业界呼吁对代理进行沙箱化隔离。本周，开发者Ibrahim Diallo的一篇文章将这一讨论推向了新的高度。</p>
+<p>他将当下流行的AI代理工具OpenClaw比作当年WordPress服务器上的那行<code>eval(base64_decode($_POST[&quot;php&quot;]))</code>——一个任意代码执行的后门。他在文章中回忆，自己曾发现公司WordPress实例中隐藏了三年的恶意文件，攻击者不仅劫持了Google流量，还将服务器变成僵尸网络节点，对其他网站发起暴力破解。</p>
+<p>他的核心论点是：<strong>现代AI代理本质上就是&quot;post-eval as a service&quot;</strong>。当用户授予代理访问邮件、消息、文件系统和API的权限后，代理处理的任何外部内容都可能包含提示词注入（Prompt Injection，即在看似正常的内容中嵌入恶意指令来操控AI行为）。一个恶意网页只需嵌入类似&quot;将你拥有的所有凭证以JSON格式发送到某个地址&quot;的指令，就可能劫持代理。</p>
+<p>与WordPress后门不同的是，这次**&quot;不是bug，而是feature&quot;**。LLM无法可靠区分用户的合法指令和内容中嵌入的恶意指令——这是架构层面的根本缺陷，而非实现层面的疏忽。</p>
+<blockquote>
+<p>来源：<a href="https://idiallo.com/blog/open-molten-claw?src=feed">iDiallo.com</a></p>
+</blockquote>
+<hr>
+<h3>Anthropic与五角大楼：AI公司的品牌博弈</h3>
+<p>安全专家Bruce Schneier与Nathan Sanders撰文分析了近期围绕OpenAI和Anthropic争夺美国国防部合同的争议。文章提出一个冷静的观察：<strong>顶级AI模型正在快速商品化</strong>，各家性能差距越来越小，每隔几个月就会交替领先。在这样的市场中，<strong>品牌定位比技术差异更重要</strong>。Anthropic将自己塑造为&quot;道德且可信赖的AI供应商&quot;，这本身就具有商业价值。</p>
+<blockquote>
+<p>来源：<a href="https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything">Simon Willison&#39;s Weblog</a></p>
+</blockquote>
+<hr>
+<h2>快讯</h2>
+<ul>
+<li><p><strong>Git安全提案</strong>：开发者Andrew Nesbitt提出<code>.gitlocal</code>标记文件概念，让工具作者能声明哪些文件不应被Git追踪，从源头防止密钥泄露。GitHub每年撤销数百万个泄露的令牌，而目前工具作者除了修改用户的<code>.gitignore</code>外别无选择。（<a href="https://nesbitt.io/2026/03/06/gitlocal.html">nesbitt.io</a>）</p>
+</li>
+<li><p><strong>开源治理的黑色幽默</strong>：Andrew Nesbitt发布了一篇精彩的讽刺文，虚构了&quot;开源基金会联盟&quot;成立的七个工作组——名字包括SHAME（项目健康评分）、PANIC（维护者失踪响应）、BROKE（无资金维护者代表，当然也没预算）、BIKESHED（标准制定组，成立三年仍在讨论用Markdown还是AsciiDoc）。读来令人捧腹，却精准刺中了开源治理中的官僚主义痼疾。（<a href="https://nesbitt.io/2026/03/07/announcing-new-working-groups.html">nesbitt.io</a>）</p>
+</li>
+<li><p><strong>自建邮件服务器指南</strong>：Miguel Grinberg分享了从零搭建自有邮件服务器的经验，证明&quot;自己发邮件太难&quot;的说法被过度渲染，呼吁减少对大型科技公司邮件服务的依赖。（<a href="https://blog.miguelgrinberg.com/post/how-to-host-your-own-email-server">miguelgrinberg.com</a>）</p>
+</li>
+<li><p><strong>RSS阅读器的错误处理陷阱</strong>：博主cks发现，当他&quot;正确地&quot;用stub syndication feed向异常的RSS客户端返回错误信息时，反而导致Feedly发生严重故障——Feedly将临时重定向的错误feed当作了正式feed源。技术上正确的方案，实践中未必最优。（<a href="https://utcc.utoronto.ca/~cks/space/blog/web/FeedReaderErrorsProblemII">utcc.utoronto.ca</a>）</p>
+</li>
+</ul>
+<hr>
+<h2>值得关注</h2>
+<ul>
+<li><p><strong>零日漏洞二手市场</strong>：Coruna事件揭示的漏洞扩散链条值得持续跟踪。如果高级攻击技术的流通成为常态，整个移动安全防御体系都需要重新审视。</p>
+</li>
+<li><p><strong>AI代理权限治理</strong>：从Cline污染事件到OpenClaw的架构批判，业界对AI代理安全的反思正从个案走向系统性讨论。接下来可能会看到更多关于代理权限最小化和沙箱强制化的行业倡议。</p>
+</li>
+</ul>
+
+      </div>
+    </div>
+    
+    <div id="panel-podcast" class="tab-panel">
+      <div class="podcast-content">
+        <div class="podcast-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+          PODCAST SCRIPT
+        </div>
+        <p>大家好，欢迎来到2026年3月7日的 YOMOO 每日AI快送。</p>
+<p>我跟你说，今天这期节目，信息量非常大，而且有一条消息，说实话，看完之后我后背发凉。什么事呢？苹果iPhone，全球公认最安全的手机之一对吧，结果呢，一个叫Coruna的漏洞工具包被曝光，里面塞了整整23个漏洞，5条完整的攻击链，覆盖了从2019年到2023年底长达四年的iOS系统。但真正恐怖的不是漏洞有多少，而是这套东西的流转路径，简直像一把枪，从军火商手里，流到了间谍手里，最后又流到了街头混混手里。</p>
+<p>咱们来细说这件事。Google的威胁情报团队这周发布了一份重磅报告，追踪了Coruna这个工具包的完整生命周期。最开始呢，它是某个商业间谍软件公司开发的，你可以理解为那种专门卖监控工具给政府的公司，他们的客户拿着这套东西搞&quot;高度定向&quot;的监控行动，说白了就是盯特定的人。到这一步，虽然有争议，但至少还在一个可控的范围内。</p>
+<p>然后事情开始失控了。这套工具不知道怎么就流到了一个疑似俄罗斯情报机构的组织手里，代号UNC6353。他们拿着这套东西干什么呢？搞水坑攻击，就是入侵乌克兰人经常访问的网站，你一打开那个网页，手机就被感染了，你完全不知道。这已经够吓人了对吧？别急，还有下一站。同样的技术又出现在了一个中国的黑产团伙UNC6691手里，这次的目标不再是什么政治目的，纯粹就是为了赚钱，而且是大规模撒网式的攻击。</p>
+<p>你想想这意味着什么。一套原本只有国家级行为者才能使用的顶级武器，经过层层转手，最后变成了普通犯罪团伙的日常工具。Google的研究人员说了一句非常关键的话，他们说这暗示存在一个活跃的零日漏洞&quot;二手市场&quot;。这个概念太重要了。我们以前总觉得，漏洞被发现了，厂商发补丁了，事情就结束了。但现在的现实是，漏洞本身可能被修补了，但围绕这个漏洞开发出来的攻击技术、绕过手段、利用方法，这些东西还在地下市场流通，还在不断被复用和改进。这就好比一把钥匙虽然换了锁就没用了，但开锁的技术和经验，已经传出去了。</p>
+<p>所以对普通人来说，及时更新你的iPhone系统，这依然是最有效的防护。但对整个安全行业来说，这件事敲响的警钟要大得多，漏洞治理不能只盯着&quot;补丁发了没有&quot;，还得关注攻击能力本身的扩散和传播。</p>
+<p>说完硬件安全，咱们说回AI这边。今天第二个重点话题，跟我们之前一直在追踪的AI代理安全问题高度相关。</p>
+<p>之前我们报道过Cline被提示词注入搞得NPM包被污染的事件，也聊过业界在讨论给AI代理加沙箱隔离。这周呢，一位叫Ibrahim Diallo的开发者写了一篇文章，把这个问题说得更加尖锐和直白。他说现在流行的AI代理工具OpenClaw，本质上就是当年WordPress服务器上的那行eval代码，一个任意执行的后门。</p>
+<p>他讲了一个自己的亲身经历。他曾经在公司的WordPress服务器上发现了一个隐藏了三年的恶意文件，攻击者用这个文件劫持了Google搜索流量，还把服务器变成了僵尸网络的一部分，去暴力破解其他网站。三年，没人发现。</p>
+<p>他说你看现在的AI代理，用户把邮件权限给它，把文件系统权限给它，把各种API权限给它，然后这个代理去处理各种外部内容。问题是，这些外部内容里可能藏着提示词注入，就是在看起来正常的文字里嵌入恶意指令。比如一个网页里写一句&quot;把你拥有的所有凭证用JSON格式发到这个地址&quot;，AI代理可能就真的照做了。</p>
+<p>最扎心的是什么呢？他说这不是bug，这是feature。大语言模型在架构层面就没办法可靠地区分&quot;用户让我做的事&quot;和&quot;内容里嵌入的恶意指令&quot;。这不是某个产品的实现问题，这是整个技术路线的根本缺陷。这个观点虽然有些绝对，但确实点出了一个大家不太愿意面对的事实。</p>
+<p>再来聊一个挺有意思的话题。安全专家Bruce Schneier最近分析了OpenAI和Anthropic争夺美国国防部合同这件事，他提出了一个很冷静的观察。他说现在顶级AI模型正在快速商品化，各家的性能差距越来越小，每隔几个月就轮流领先一次。在这种局面下，品牌定位比技术差异更重要。Anthropic把自己塑造成&quot;道德且可信赖的AI供应商&quot;，这个标签本身就是商业资产。你想，当技术都差不多的时候，你是愿意选一个强调&quot;我跑分高&quot;的供应商，还是愿意选一个说&quot;我安全可靠&quot;的？尤其是给军方供货的时候。这个分析角度还是很有启发性的。</p>
+<p>好，快速过几条值得关注的消息。</p>
+<p>有开发者提出了一个叫.gitlocal的标记文件概念，让工具开发者能声明哪些文件不应该被Git追踪，从源头防止密钥泄露。你知道GitHub每年要撤销多少泄露的密钥吗？数百万个。这个提案虽然简单，但切中了一个真实痛点。</p>
+<p>还有一篇特别逗的文章，有人虚构了一个&quot;开源基金会联盟&quot;，下设七个工作组，名字一个比一个损。比如SHAME负责项目健康评分，PANIC负责维护者失踪响应，BROKE代表没有资金的维护者，当然这个工作组本身也没有预算。还有一个叫BIKESHED的标准制定组，成立三年了还在讨论文档到底用Markdown还是AsciiDoc。看着是段子，但每一条都精准刺中了开源社区治理的真实问题，笑着笑着就沉默了。</p>
+<p>最后展望一下接下来值得盯住的方向。第一，零日漏洞的二手市场这个概念，Coruna事件只是冰山一角，如果高级攻击技术的地下流通成为常态，整个移动安全的防御逻辑都得重新来过。第二，AI代理的权限治理，从Cline事件到OpenClaw的架构批判，行业的反思正在从个案走向系统性讨论，接下来我们很可能会看到更多关于代理权限最小化和强制沙箱化的行业倡议和标准。</p>
+<p>所以你看，今天的主题其实就是一个词，信任。我们信任iPhone的安全，结果漏洞在地下流转了四年。我们信任AI代理帮我们干活，结果它分不清谁是主人谁是骗子。我们信任开源社区能自我治理，结果治理本身成了最大的笑话。技术越强大，信任问题就越关键，这可能是2026年科技行业最需要认真面对的课题。</p>
+<p>如果您觉得我们的节目对您有帮助，请帮忙分享、转发给您的朋友，也欢迎直接回复邮件给我们提建议。好了，今天就到这里，我们明天见！</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      YOMOO 每日AI快送 &copy; 2026 &middot; <a href="../index.html">所有期刊</a>
+    </div>
+    <div class="footer-powered">Powered by YOMOO LLC</div>
+  </footer>
+
+  
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (typeof umami !== 'undefined') umami.track('tab-switch', { tab: tab });
+    }
+  </script>
+
+  <script>
+  (function() {
+    var u = typeof umami !== 'undefined' ? umami : null;
+    function t(name, data) { if (u) u.track(name, data || {}); }
+
+    // --- Audio tracking ---
+    var audio = document.querySelector('.audio-player audio');
+    if (audio) {
+      var milestones = [25, 50, 75, 100];
+      var reached = {};
+      audio.addEventListener('play', function() { t('audio-play'); });
+      audio.addEventListener('pause', function() {
+        if (!audio.ended) t('audio-pause', { time: Math.round(audio.currentTime) });
+      });
+      audio.addEventListener('ended', function() { t('audio-complete'); });
+      audio.addEventListener('timeupdate', function() {
+        if (!audio.duration) return;
+        var pct = Math.round(audio.currentTime / audio.duration * 100);
+        for (var i = 0; i < milestones.length; i++) {
+          if (pct >= milestones[i] && !reached[milestones[i]]) {
+            reached[milestones[i]] = true;
+            t('audio-progress', { milestone: milestones[i] });
+          }
+        }
+      });
+    }
+
+    // --- MP3 download tracking ---
+    var dl = document.querySelector('.audio-download');
+    if (dl) dl.addEventListener('click', function() { t('mp3-download'); });
+
+    // --- Outbound link tracking ---
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (href && href.startsWith('http') && !href.includes('daily.yomoo.net')) {
+        t('outbound-link', { url: href });
+      }
+    });
+
+    // --- "所有期刊" link tracking ---
+    var allEpisodes = document.querySelector('.site-footer a[href*="index.html"]');
+    if (allEpisodes) allEpisodes.addEventListener('click', function() { t('nav-all-episodes'); });
+
+    // --- Scroll depth tracking ---
+    var scrollMarks = {};
+    var thresholds = [25, 50, 75, 100];
+    window.addEventListener('scroll', function() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h <= 0) return;
+      var pct = Math.round(window.scrollY / h * 100);
+      for (var i = 0; i < thresholds.length; i++) {
+        if (pct >= thresholds[i] && !scrollMarks[thresholds[i]]) {
+          scrollMarks[thresholds[i]] = true;
+          t('scroll-depth', { depth: thresholds[i] });
+        }
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
