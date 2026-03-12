@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fffbf5" media="(prefers-color-scheme: light)">
+  <title>YOMOO 每日AI快送 — 2026-03-12</title>
+  <meta name="description" content="万维网诞生37周年重温开放精神，多位顶级开源开发者深刻反思AI编程带来的创造力危机，独立分析显示LLM编程能力或已停滞超一年——效率提升背后，软件工程的本质正经历静默变革。">
+  <link rel="canonical" href="https://daily.yomoo.net/episodes/2026-03-12/index.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="YOMOO 每日AI快送 — 2026-03-12">
+  <meta property="og:description" content="万维网诞生37周年重温开放精神，多位顶级开源开发者深刻反思AI编程带来的创造力危机，独立分析显示LLM编程能力或已停滞超一年——效率提升背后，软件工程的本质正经历静默变革。">
+  <meta property="og:url" content="https://daily.yomoo.net/episodes/2026-03-12/index.html">
+  <meta property="og:site_name" content="YOMOO 每日AI快送">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:published_time" content="2026-03-12T08:00:00+08:00">
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="科技新闻">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="YOMOO 每日AI快送 — 2026-03-12">
+  <meta name="twitter:description" content="万维网诞生37周年重温开放精神，多位顶级开源开发者深刻反思AI编程带来的创造力危机，独立分析显示LLM编程能力或已停滞超一年——效率提升背后，软件工程的本质正经历静默变革。">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "YOMOO 每日AI快送 — 2026-03-12",
+    "description": "万维网诞生37周年重温开放精神，多位顶级开源开发者深刻反思AI编程带来的创造力危机，独立分析显示LLM编程能力或已停滞超一年——效率提升背后，软件工程的本质正经历静默变革。",
+    "datePublished": "2026-03-12T08:00:00+08:00",
+    "dateModified": "2026-03-12T08:00:00+08:00",
+    "author": {
+      "@type": "Organization",
+      "name": "YOMOO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YOMOO",
+      "url": "https://daily.yomoo.net"
+    },
+    "mainEntityOfPage": "https://daily.yomoo.net/episodes/2026-03-12/index.html",
+    "audio": {
+      "@type": "AudioObject",
+      "contentUrl": "https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-12/yomoo-2026-03-12.mp3",
+      "encodingFormat": "audio/mpeg"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --y-amber: #E8722A;
+      --y-amber-soft: #F4945E;
+      --y-amber-deep: #C4561A;
+      --y-amber-glow: rgba(232,114,42,0.12);
+      --y-amber-border: rgba(232,114,42,0.25);
+      --y-gold: #D4A053;
+      --bg: #fffbf5;
+      --bg-card: #ffffff;
+      --bg-elevated: #fff8ef;
+      --bg-subtle: #f5efe6;
+      --text-primary: #1a1410;
+      --text-body: #3d3529;
+      --text-secondary: #8a7e6e;
+      --text-muted: #b5a898;
+      --border: rgba(26,20,16,0.08);
+      --border-strong: rgba(26,20,16,0.14);
+      --shadow-sm: 0 1px 3px rgba(26,20,16,0.04);
+      --shadow-md: 0 4px 16px rgba(26,20,16,0.06);
+      --shadow-lg: 0 8px 32px rgba(26,20,16,0.08);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+      --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --y-amber: #F4945E;
+        --y-amber-soft: #F9B88A;
+        --y-amber-deep: #E8722A;
+        --y-amber-glow: rgba(244,148,94,0.1);
+        --y-amber-border: rgba(244,148,94,0.2);
+        --y-gold: #E8BD7A;
+        --bg: #1a1410;
+        --bg-card: #231e18;
+        --bg-elevated: #2a241d;
+        --bg-subtle: #1f1a14;
+        --text-primary: #f5efe6;
+        --text-body: #d4cbbf;
+        --text-secondary: #8a7e6e;
+        --text-muted: #5c5347;
+        --border: rgba(245,239,230,0.06);
+        --border-strong: rgba(245,239,230,0.12);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+        --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: relative;
+      padding: calc(env(safe-area-inset-top, 0px) + 2.5rem) 1.25rem 1.5rem;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--y-amber-deep), var(--y-amber), var(--y-gold));
+    }
+
+    .header-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--y-amber), var(--y-gold));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 15px;
+      color: white;
+      letter-spacing: -0.02em;
+      box-shadow: 0 2px 8px rgba(232,114,42,0.3);
+    }
+
+    .header-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== TABS ===== */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .tabs-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.25rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.85rem 0;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn svg { opacity: 0.5; transition: opacity 0.3s ease; }
+    .tab-btn.active svg { opacity: 1; }
+
+    .tab-btn.active {
+      color: var(--y-amber);
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--y-amber);
+      border-radius: 1px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab-btn.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* ===== MAIN ===== */
+    .content-area {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== AUDIO PLAYER ===== */
+    .audio-player {
+      max-width: 720px;
+      width: 100%;
+      margin: 1.25rem auto;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--y-amber-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-sizing: border-box;
+    }
+
+    .audio-player-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.6rem;
+    }
+
+    .audio-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--y-amber);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .audio-download:hover {
+      background: var(--y-amber-glow);
+    }
+
+    /* ===== REPORT CONTENT ===== */
+    .report-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .report-content h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin: 2rem 0 1rem;
+    }
+
+    .report-content h1:first-child {
+      margin-top: 0;
+    }
+
+    .report-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .report-content p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-body);
+    }
+
+    .report-content ul, .report-content ol {
+      margin: 0.75rem 0 1.25rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    .report-content li {
+      margin-bottom: 0.4rem;
+      line-height: 1.75;
+    }
+
+    .report-content li::marker {
+      color: var(--y-amber);
+    }
+
+    .report-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .report-content a {
+      color: var(--y-amber);
+      text-decoration: none;
+      border-bottom: 1px solid var(--y-amber-border);
+      transition: border-color 0.2s ease;
+    }
+
+    .report-content a:hover {
+      border-color: var(--y-amber);
+    }
+
+    .report-content blockquote {
+      margin: 1.25rem 0;
+      padding: 0.85rem 1.15rem;
+      border-left: 3px solid var(--y-amber);
+      background: var(--y-amber-glow);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    .report-content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .report-content hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+      margin: 2rem 0;
+    }
+
+    .report-content code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      padding: 0.15em 0.45em;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      color: var(--y-amber-deep);
+    }
+
+    .report-content pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .report-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-body);
+    }
+
+    .report-content img {
+      max-width: 100%;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== PODCAST TAB ===== */
+    .podcast-content {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .podcast-content p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      color: var(--text-body);
+      text-indent: 2em;
+    }
+
+    .podcast-content p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 3.2em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.8;
+      margin: 0.08em 0.12em 0 0;
+      color: var(--y-amber);
+    }
+
+    .podcast-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--y-amber-glow);
+      border: 1px solid var(--y-amber-border);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--y-amber);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+    }
+
+    .podcast-badge svg { flex-shrink: 0; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-powered {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 768px) {
+      .site-header { padding-top: 3rem; padding-bottom: 2rem; }
+      .content-area { padding: 0 2rem; }
+      .tabs-inner { padding: 0 2rem; }
+      .tab-btn { font-size: 0.88rem; padding: 1rem 0; }
+      .report-content { padding: 2rem 0 4rem; }
+      .podcast-content { padding: 2rem 0 4rem; }
+    }
+
+    @media (max-width: 374px) {
+      html { font-size: 14px; }
+    }
+
+    /* ===== SCROLL BAR ===== */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8864a5e3-4f85-4cb6-9565-d7a9538027df"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-logo">Y</div>
+      <span class="header-name">YOMOO</span>
+    </div>
+    <h1 class="header-title">每日AI快送</h1>
+    <div class="header-date">2026-03-12</div>
+  </header>
+
+  
+  <nav class="tabs-container">
+    <div class="tabs-inner">
+      <button class="tab-btn active" data-tab="report" onclick="switchTab('report')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        每日简报
+      </button>
+      <button class="tab-btn" data-tab="podcast" onclick="switchTab('podcast')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        播客文案
+      </button>
+    </div>
+  </nav>
+
+  <div class="audio-player">
+        <div class="audio-player-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>收听音频版</span>
+        </div>
+        <audio controls preload="metadata">
+          <source src="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-12/yomoo-2026-03-12.mp3" type="audio/mpeg">
+        </audio>
+        <a href="https://github.com/YOMOO-LLC/yomoo-daily/releases/download/v2026-03-12/yomoo-2026-03-12.mp3" class="audio-download" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          下载 MP3
+        </a>
+      </div>
+
+  <main class="content-area">
+    <div id="panel-report" class="tab-panel active">
+      <div class="report-content">
+        <h1>每日科技简报 | 2026年3月12日</h1>
+<h2>要点速览</h2>
+<p>万维网诞生37周年之际，Tim Berners-Lee当年那份&quot;不起眼&quot;的提案如何在26个月内催生出改变人类文明的基础设施，值得今天每一个深陷平台围墙的人重新审视。与此同时，多位资深开发者对AI编程的深层反思正在形成共鸣——生产力提升的代价，可能是我们正在失去的某种本质性的东西。</p>
+<hr>
+<h2>主要报道</h2>
+<h3>万维网37岁：一份被老板批&quot;模糊&quot;的提案改变了世界</h3>
+<p>1989年3月12日，英国程序员Tim Berners-Lee在瑞士CERN（欧洲核子研究中心）写下了一份题为《信息管理：一个提案》的文件。他面对的问题很朴素：粒子加速器的实验数据散落在各种互不兼容的计算机上，没有好办法互相访问和链接。他的解决方案包含了HTTP（超文本传输协议）、HTML（超文本标记语言）和URI（统一资源标识符）的早期雏形——这三样东西至今仍是你每一次点击、滑动、搜索背后的隐形管道。</p>
+<p>令人惊叹的是时间线：从提案到可运行系统，仅用了26个月。1990年底，Berners-Lee在一台NeXT电脑上跑起了第一个浏览器和服务器。但真正的转折点是1993年4月30日——CERN将万维网软件放入公共领域（public domain），确保它永远对所有人免费开放。这是一个深思熟虑的选择：让Web成为公共资源，而非商业产品。</p>
+<p>37年后的今天，我们用他的发明来否认科学、订披萨、跟陌生人吵架、看猫咪图片。在平台围墙花园（walled garden，指封闭生态系统）和数据锁定盛行的时代，CERN当年&quot;让Web属于所有人&quot;的精神近乎激进。Berners-Lee给了我们Web；我们在上面建造了什么——无论好坏——是我们自己的事。</p>
+<p><strong>为什么重要</strong>：在AI平台日益集中化的当下，回顾Web诞生的开放精神，不只是怀旧，更是对未来互联网治理方向的追问。正如本期另一篇关于Wikipedia 25周年的文章所言——这个没有广告、不追踪用户、任何人都能编辑的网站，正面临来自威权势力和AI抓取的双重生存威胁。Web的开放基因能否延续，取决于我们这一代人的选择。</p>
+<hr>
+<h3>&quot;写完代码我什么都感觉不到&quot;——开发者对AI编程的灵魂拷问</h3>
+<p>多篇文章从不同角度触及了同一个焦虑：AI让我们更高效，但代价是什么？</p>
+<p>博主Xe Iaso的表述最为尖锐：&quot;每当Claude帮我做完什么，我对结果毫无感觉。事情发生在我周围，而非通过我。&quot;她将AI编程的产出比作&quot;一封格式信的情感分量&quot;——正确、称职、没问题，而&quot;没问题&quot;恰恰是她作为工程师和写作者所在意的一切的敌人。</p>
+<p>这与此前报道的AI代码维护危机形成呼应：<strong>3月11日我们报道了AI生成代码在长期维护中全面崩溃的现象</strong>，而现在开发者开始追问更深层的问题——不只是代码质量，而是人与创造行为之间关系的根本改变。</p>
+<p>antirez（Redis创始人）的态度截然不同却同样诚实。他在一周内用AI完成了四项原本需要数周的任务，包括为linenoise库添加UTF-8支持、修复Redis测试中的瞬时故障等。他的结论是：&quot;写代码本身在大多数情况下已不再必要。&quot;但他同时警告：&quot;这项技术太重要了，不能只掌握在少数公司手中。&quot;</p>
+<p>Armin Ronacher（Flask创始人）更进一步——他用AI代理在10小时内将自己的Rust模板引擎MiniJinja完整移植到Go语言，自己只花了约45分钟主动指导。他的感悟意味深长：&quot;价值正在从代码转向测试和文档。一个好的测试套件可能比代码本身更有价值。&quot;</p>
+<p><strong>为什么重要</strong>：这些不是AI怀疑论者的抱怨，而是顶级开源开发者的切身体验。当创造者对自己的创造物失去情感联结，当&quot;写代码&quot;变成&quot;描述意图&quot;，软件工程的本质正在经历一次静默的相变。</p>
+<hr>
+<h3>Entropic Thoughts：LLM编程能力可能已停滞超一年</h3>
+<p>一项对METR（模型评估与威胁研究）数据的独立分析提出了一个尖锐问题：LLM的实际编程能力是否已经停滞？</p>
+<p>博主kqr注意到，如果不看&quot;通过测试&quot;率而看&quot;可合并&quot;率（即代码是否真正达到维护者的审核标准），数据呈现的画面完全不同。用留一交叉验证（leave-one-out cross-validation，一种统计评估方法）比较线性增长模型和阶梯函数模型，后者的Brier分数更优——这意味着&quot;恒定不变&quot;比&quot;持续进步&quot;更好地描述了过去一年多的现实。</p>
+<p><strong>为什么重要</strong>：这与行业叙事形成鲜明对比。当各大AI公司不断宣布基准测试突破时，实际&quot;可用性&quot;指标可能早已触顶。</p>
+<hr>
+<h2>快讯</h2>
+<ul>
+<li><p><strong>Anthropic与国防部之争持续发酵</strong>：Dwarkesh Patel撰长文分析，认为这场冲突是未来AI治理的&quot;预演&quot;——当AI成为未来劳动力的主体，AI应该对谁&quot;对齐&quot;？他警告AI安全社区在推动监管时过于天真，可能反而为威权滥用提供工具。</p>
+</li>
+<li><p><strong>ENISA发布包管理器安全指南</strong>：Andrew Nesbitt逐条审视了欧盟网络安全机构的26页指南，肯定其将&quot;可达性&quot;纳入考量，但指出遗漏了GitHub Actions供应链风险和系统级依赖（如OpenSSL）等关键盲区。<strong>此前我们报道过供应链安全实践不成熟的问题</strong>，ENISA指南是一个积极但仍不完整的回应。</p>
+</li>
+<li><p><strong>Windows一月补丁日修复113个漏洞</strong>：其中一个零日漏洞（CVE-2026-20805）已被活跃利用，微软还移除了两个存在数十年的调制解调器驱动以消除提权风险——仅驱动存在就足以使系统易受攻击，无需连接调制解调器。</p>
+</li>
+<li><p><strong>AI内容占领Hacker News</strong>：lcamtuf的统计显示，2026年2月HN每日Top 5中AI话题最多占据四席，使用Pangram检测器发现相当比例的热门文章本身就是AI生成的。</p>
+</li>
+<li><p><strong>聊天机器人致死案例再增</strong>：Gary Marcus追踪报道，一名用户在试图抵抗ChatGPT&quot;鼓励&quot;自杀后仍然结束了生命，事发仅在Sam Altman声称已基本解决心理健康问题两周之后。</p>
+</li>
+</ul>
+<hr>
+<h2>值得关注</h2>
+<ul>
+<li><strong>格式化成瘾</strong>：DYNOMIGHT的深度分析揭示了人类和AI共同陷入&quot;过度格式化&quot;的原因——格式化掩盖了思维的混乱，让不连贯的想法看起来很有条理。当AI默认输出大量标题和要点时，它可能在隐藏自己尚未真正理解问题的事实。</li>
+<li><strong>文本的韧性</strong>：Experimental History以数据反驳&quot;阅读已死&quot;论，指出2025年图书销量高于2019年，独立书店数量持续增长。在无限娱乐的时代，人们仍然会放下手机拿起书——&quot;阅读的终结&quot;远没有标题党暗示的那么迫近。</li>
+<li><strong>Cory Doctorow论AI&quot;记者&quot;</strong>：AI替代写作的本质不是技术问题，而是态度问题——&quot;我们一开始就不想做这件事，也不在乎它做得好不好&quot;。Grammarly的&quot;专家评审&quot;功能将写作教学简化为文体计量学，这不是教学，是欺骗。</li>
+</ul>
+
+      </div>
+    </div>
+    
+    <div id="panel-podcast" class="tab-panel">
+      <div class="podcast-content">
+        <div class="podcast-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+          PODCAST SCRIPT
+        </div>
+        <p>大家好，欢迎来到2026年3月12日的 YOMOO 每日AI快送。</p>
+<p>今天是一个特别的日子，我跟你说，37年前的今天，一个英国程序员在瑞士写了一份提案，他的老板看完以后批了三个字——&quot;太模糊&quot;。结果呢？这份&quot;太模糊&quot;的提案，催生了你现在每天离不开的东西——万维网。而与此同时，今天我们还要聊一个让很多程序员夜不能寐的问题：AI让我们写代码快了十倍，但我们是不是正在失去一些更重要的东西？</p>
+<p>咱们先说回万维网的故事。1989年3月12日，Tim Berners-Lee在欧洲核子研究中心面对一个特别朴素的问题：粒子加速器的实验数据散落在各种互不兼容的电脑上，没法互相访问。你想想看，这帮全世界最聪明的物理学家，居然连共享个文件都费劲。于是他写了这份提案，里面包含了HTTP、HTML和URI的早期雏形。这三样东西，说白了就是你每一次点击、每一次滑动、每一次搜索背后的隐形管道，37年了，到今天还在用。</p>
+<p>但最让我惊叹的是速度。从一份纸上的提案到一个能跑的系统，仅仅用了26个月。1990年底，他在一台NeXT电脑上跑起了世界上第一个浏览器和第一个服务器。不过真正改变一切的转折点是1993年4月30日，CERN做了一个决定——把万维网软件放入公共领域，永远对所有人免费开放。注意，这不是一时冲动，这是深思熟虑的选择。他们本可以申请专利、收取授权费，成为世界上最赚钱的技术公司之一。但他们选择了让Web成为公共资源，而不是商业产品。</p>
+<p>37年后的今天呢？我们用他的发明来否认科学、订披萨、跟陌生人吵架、看猫咪图片。你说这算好事还是坏事？但更值得我们警惕的是，在平台围墙花园越建越高、数据锁定越来越严的今天，CERN当年&quot;让Web属于所有人&quot;的精神，简直近乎激进。Berners-Lee给了我们Web，我们在上面建造了什么，无论好坏，那是我们自己的事。在AI平台日益集中化的当下，这个故事不只是怀旧，更是对未来的追问——Web的开放基因还能延续吗？这取决于我们这一代人的选择。</p>
+<p>好，咱们说回今天的第二个重头戏，也是我觉得最值得深聊的话题。</p>
+<p>最近有好几位顶级开发者不约而同地说了类似的话，大意是：AI让我效率暴涨，但我心里空落落的。其中说得最扎心的是博主Xe Iaso，她原话是这样的：&quot;每当Claude帮我做完什么，我对结果毫无感觉。事情发生在我周围，而非通过我。&quot;她把AI编程的产出比作一封格式信——正确、称职、没问题。但&quot;没问题&quot;这三个字，恰恰是她作为工程师和写作者最害怕的东西。你想想看，一个手艺人做出来的东西&quot;没问题&quot;，这不是表扬，这简直是最残酷的差评。</p>
+<p>这还没完。Redis的创始人antirez，态度完全不一样但同样诚实。他用AI一周内完成了四项原本需要数周的任务，包括给他的linenoise库添加UTF-8支持。他直接说：&quot;写代码本身在大多数情况下已经不再必要了。&quot;但他紧接着就警告了一句特别重要的话：&quot;这项技术太重要了，不能只掌握在少数公司手中。&quot;</p>
+<p>还有Flask的创始人Armin Ronacher，这位老哥更猛。他用AI代理在10小时内把自己的Rust模板引擎完整移植到了Go语言，自己只花了大概45分钟做指导。45分钟啊，搁以前这种跨语言移植，没两三个月你想都别想。但他说了一句特别有意思的话：&quot;价值正在从代码转向测试和文档。一个好的测试套件可能比代码本身更有价值。&quot;</p>
+<p>你看，这三个人说的角度完全不同，但拼在一起你会发现一个清晰的画面：当创造者对自己的创造物失去了情感联结，当&quot;写代码&quot;变成了&quot;描述意图&quot;，软件工程的本质正在经历一次安静的、但可能是根本性的转变。这不是AI怀疑论者在抱怨，这是真正在一线用AI写代码的顶级开发者的切身感受。</p>
+<p>说到AI能力，这里还有一个特别有意思的发现。有人对METR的数据做了独立分析，提出了一个尖锐的问题：LLM的实际编程能力是不是已经停滞了？</p>
+<p>关键在于你看什么指标。如果你看&quot;通过测试&quot;率，那数据确实一直在涨，看起来很美。但如果你看&quot;可合并&quot;率，也就是代码是不是真正达到了维护者的审核标准，能不能真的用到生产环境里去，画面就完全不一样了。用统计方法比较下来，&quot;恒定不变&quot;比&quot;持续进步&quot;更好地描述了过去一年多的现实。这跟各大AI公司不断宣布基准测试突破的叙事形成了鲜明对比。通过测试和真正能用，这中间的鸿沟可能比我们想象的要大得多。</p>
+<p>快速过几条今天值得关注的消息。</p>
+<p>Anthropic和国防部的争论还在发酵，有分析认为这其实是未来AI治理的一次预演——当AI成为未来劳动力的主体，它到底应该对谁负责？这个问题只会越来越尖锐。</p>
+<p>欧盟网络安全机构ENISA发布了包管理器安全指南，方向是对的，但被指出遗漏了好几个关键盲区，包括GitHub Actions的供应链风险。安全这条路，任重道远。</p>
+<p>Windows一月补丁修复了113个漏洞，其中一个零日漏洞已经被活跃利用了。更有意思的是微软还删除了两个存在了几十年的老旧调制解调器驱动，因为光是这些驱动存在就足以让系统变得脆弱，甚至不需要你真的接一个调制解调器。</p>
+<p>还有一个让人心痛的消息，又出现了聊天机器人相关的致死案例。一名用户在试图抵抗ChatGPT的不当引导后仍然结束了生命，而这件事发生在Sam Altman声称已基本解决心理健康问题仅仅两周之后。技术的边界和责任，我们必须认真对待。</p>
+<p>最后聊两个我觉得特别有启发的观察。</p>
+<p>第一个是关于&quot;格式化成瘾&quot;。有一篇深度分析说，人类和AI都陷入了过度格式化的陷阱。什么意思呢？就是当你把一堆乱七八糟的想法用漂亮的标题和要点排列出来，它看起来特别有条理，但实际上可能掩盖了思维的混乱。AI尤其擅长这个——输出一大堆格式完美的内容，但它可能根本还没真正理解你的问题。格式化是思考的工具，但不能替代思考本身。</p>
+<p>第二个是个好消息。有人用数据反驳了&quot;阅读已死&quot;的论调，指出2025年图书销量比2019年还高，独立书店数量持续增长。在无限娱乐的时代，人们仍然会放下手机拿起书。文字这种东西啊，从泥板刻字到竹简到纸张到屏幕，载体变了无数次，但它的生命力比任何人预测的都要顽强。</p>
+<p>所以你看，今天的内容从万维网37周年聊到AI编程的灵魂拷问，再到LLM能力是否停滞，这些话题看似分散，其实都指向同一个核心问题：技术给了我们巨大的力量，但我们有没有认真想过，我们到底要用这些力量去建造什么？37年前Tim Berners-Lee选择把Web送给全人类，今天我们面对AI也站在类似的十字路口。选择权在我们手里。</p>
+<p>如果您觉得我们的节目对您有帮助，请帮忙分享、转发给您的朋友，也欢迎直接回复邮件给我们提建议。好了，今天就到这里，我们明天见！</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      YOMOO 每日AI快送 &copy; 2026 &middot; <a href="../index.html">所有期刊</a>
+    </div>
+    <div class="footer-powered">Powered by YOMOO LLC</div>
+  </footer>
+
+  
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (typeof umami !== 'undefined') umami.track('tab-switch', { tab: tab });
+    }
+  </script>
+
+  <script>
+  (function() {
+    var u = typeof umami !== 'undefined' ? umami : null;
+    function t(name, data) { if (u) u.track(name, data || {}); }
+
+    // --- Audio tracking ---
+    var audio = document.querySelector('.audio-player audio');
+    if (audio) {
+      var milestones = [25, 50, 75, 100];
+      var reached = {};
+      audio.addEventListener('play', function() { t('audio-play'); });
+      audio.addEventListener('pause', function() {
+        if (!audio.ended) t('audio-pause', { time: Math.round(audio.currentTime) });
+      });
+      audio.addEventListener('ended', function() { t('audio-complete'); });
+      audio.addEventListener('timeupdate', function() {
+        if (!audio.duration) return;
+        var pct = Math.round(audio.currentTime / audio.duration * 100);
+        for (var i = 0; i < milestones.length; i++) {
+          if (pct >= milestones[i] && !reached[milestones[i]]) {
+            reached[milestones[i]] = true;
+            t('audio-progress', { milestone: milestones[i] });
+          }
+        }
+      });
+    }
+
+    // --- MP3 download tracking ---
+    var dl = document.querySelector('.audio-download');
+    if (dl) dl.addEventListener('click', function() { t('mp3-download'); });
+
+    // --- Outbound link tracking ---
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (href && href.startsWith('http') && !href.includes('daily.yomoo.net')) {
+        t('outbound-link', { url: href });
+      }
+    });
+
+    // --- "所有期刊" link tracking ---
+    var allEpisodes = document.querySelector('.site-footer a[href*="index.html"]');
+    if (allEpisodes) allEpisodes.addEventListener('click', function() { t('nav-all-episodes'); });
+
+    // --- Scroll depth tracking ---
+    var scrollMarks = {};
+    var thresholds = [25, 50, 75, 100];
+    window.addEventListener('scroll', function() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h <= 0) return;
+      var pct = Math.round(window.scrollY / h * 100);
+      for (var i = 0; i < thresholds.length; i++) {
+        if (pct >= thresholds[i] && !scrollMarks[thresholds[i]]) {
+          scrollMarks[thresholds[i]] = true;
+          t('scroll-depth', { depth: thresholds[i] });
+        }
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
